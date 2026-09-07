@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
 <html class="scroll-smooth" lang="es"><head>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/brand/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/brand/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" href="../../assets/img/brand/apple-touch-icon.png"/>
+
 <meta name="robots" content="noindex, nofollow"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -167,7 +172,7 @@
 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Red Sanitaria Oficial · 52 Provincias
           </span>
-<span class="hidden lg:inline text-white/90">Convenio Marco Sanitario CAS / UNESPA · Asistencia 100% Gratuita al Lesionado</span>
+<span class="hidden lg:inline text-white/90">Red Asistencial Independiente · Libre Elección Médica Sin Coste para el Lesionado</span>
 </div>
 <div class="flex items-center gap-unit-lg">
 <a class="flex items-center gap-1.5 text-white hover:text-emerald-300 transition-colors" href="tel:900800240">
@@ -185,15 +190,9 @@
 <div class="max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop">
 <div class="h-20 flex items-center justify-between gap-unit-md">
 <div class="flex items-center gap-unit-lg">
-<a class="flex items-center gap-3 group" href="#">
-<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-sm group-hover:bg-secondary transition-colors">
-<span class="material-symbols-outlined text-[24px]">health_and_safety</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-lg text-headline-sm text-primary tracking-tight font-bold">Clínicas Vita</span>
-<span class="font-label-sm text-[10.5px] uppercase tracking-wider text-on-surface-variant font-semibold">Atención Médica &amp; Rehabilitación</span>
-</div>
-</a>
+        <a class="flex items-center gap-3 group shrink-0" href="#" title="Clínicas Vita — Atención Médica &amp; Rehabilitación">
+          <img src="../../assets/img/brand/logo-horizontal.svg" alt="Clínicas Vita" class="h-9 sm:h-10 w-auto">
+        </a>
 <nav class="hidden xl:flex items-center gap-6 pl-4">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors py-2" href="#triaje-digital">Triaje Médico</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors py-2" href="#especialidades">Especialidades Sanitarias</a>
@@ -263,7 +262,7 @@
 <!-- Statutory Citation -->
 <div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm pt-1">
 <span class="material-symbols-outlined text-secondary text-[16px]">shield</span>
-<span>Garantizado por Real Decreto Legislativo 8/2004 y Convenio Nacional CAS / UNESPA</span>
+<span>Garantizado por Real Decreto Legislativo 8/2004 y Libre Elección de Clínica</span>
 </div>
 </div>
 <!-- Right Column: Real compassionate healthcare photography -->
@@ -598,7 +597,7 @@
 <span class="material-symbols-outlined text-emerald-700 text-[24px] shrink-0 mt-0.5">verified_user</span>
 <div>
 <p class="font-headline-sm text-headline-sm text-primary font-semibold">Facturación Directa entre Entidades</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Usted no paga nada ni tiene que reclamar facturas: la clínica liquida directamente conforme al Convenio Sanitario UNESPA/CAS.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Usted no paga nada ni tiene que reclamar facturas: la clínica liquida directamente con la aseguradora obligada sin que usted tenga que adelantar dinero.</p>
 </div>
 </div>
 </div>
@@ -660,7 +659,7 @@
 <tr>
 <td class="p-unit-md font-semibold text-primary">Coste para el paciente</td>
 <td class="p-unit-md bg-blue-50/40 border-x border-blue-100 font-medium text-primary">
-<span class="text-emerald-700 font-semibold">0 € sin copagos ni adelantos</span>. Facturación directa mediante Convenio UNESPA/CAS.
+<span class="text-emerald-700 font-semibold">0 € sin copagos ni adelantos</span>. Facturación directa a la aseguradora bajo cobertura de asistencia sanitaria.
                 </td>
 <td class="p-unit-md text-on-surface-variant">
                   0 €, pero con un tratamiento reducido en tiempo e intensidad terapéutica.
@@ -706,7 +705,7 @@
 <div class="flex items-start gap-3">
 <span class="material-symbols-outlined text-emerald-400 text-[20px] mt-0.5">currency_exchange</span>
 <div>
-<p class="font-headline-sm text-headline-sm font-semibold text-white">Liquidación Garantizada CAS</p>
+<p class="font-headline-sm text-headline-sm font-semibold text-white">Liquidación Centralizada Garantizada</p>
 <p class="font-body-sm text-body-sm text-white/70">Facturación ágil y puntual sin disputas burocráticas con aseguradoras.</p>
 </div>
 </div>
@@ -716,7 +715,12 @@
 <div class="bg-surface-container-lowest text-primary rounded-2xl p-unit-lg shadow-2xl">
 <h3 class="font-headline-lg text-headline-lg font-bold text-primary mb-1">Solicitud de Adhesión B2B</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-unit-md">Exclusivo para directores médicos y administradores de clínicas.</p>
-<form class="space-y-unit-sm" onsubmit="event.preventDefault(); alert('Solicitud B2B recibida. El departamento de homologación sanitaria contactará en menos de 24 horas laborables.');">
+<div id="b2b-humana-feedback" class="hidden p-5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-center space-y-2 mb-4">
+<span class="material-symbols-outlined text-emerald-600 text-3xl">check_circle</span>
+<p class="font-headline-sm font-bold text-base">Solicitud B2B Registrada</p>
+<p class="text-xs text-emerald-800">El departamento de homologación sanitaria contactará con su centro en menos de 24 horas laborables.</p>
+</div>
+<form id="form-b2b-humana" class="space-y-unit-sm" onsubmit="event.preventDefault(); document.getElementById('b2b-humana-feedback').classList.remove('hidden'); this.classList.add('hidden');">
 <div>
 <label class="font-label-sm text-label-sm text-primary font-semibold block mb-1">Razón Social o Nombre de la Clínica</label>
 <input class="w-full h-11 px-3.5 rounded-xl bg-surface border border-surface-container-highest text-on-surface font-body-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary/30 transition-all" placeholder="Ej. Policlínica San Mateo S.L." required="" type="text"/>
@@ -786,20 +790,17 @@
 <footer class="w-full bg-surface-container-lowest border-t border-surface-container mt-unit-3xl">
 <div class="max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop pt-unit-3xl pb-unit-2xl">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-unit-2xl mb-unit-2xl">
-<div>
-<div class="flex items-center gap-2.5 mb-unit-md">
-<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-[20px]">health_and_safety</span>
-</div>
-<span class="font-headline-sm text-headline-sm text-primary font-bold">Clínicas Vita</span>
-</div>
+        <div>
+          <a href="#" class="inline-block mb-unit-md" title="Clínicas Vita">
+            <img src="../../assets/img/brand/logo-horizontal.svg" alt="Clínicas Vita" class="h-8 sm:h-9 w-auto">
+          </a>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-unit-md leading-relaxed">
             Red sanitaria nacional especializada en la asistencia médica preferente, diagnóstico por imagen y rehabilitación individualizada para personas lesionadas en accidentes de tráfico y laborales.
           </p>
 <div class="flex flex-col gap-2 font-label-sm text-label-sm text-on-surface-variant">
 <div class="flex items-center gap-2 text-on-surface font-medium">
 <span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
-<span>Adherido al Convenio Oficial CAS / UNESPA</span>
+<span>Libre Elección de Centro Asistencial Garantizada por Ley</span>
 </div>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-secondary text-[18px]">location_on</span>
@@ -848,8 +849,8 @@
 <div class="pt-unit-lg mt-unit-lg flex flex-col md:flex-row items-center justify-between gap-unit-md font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-unit-lg py-unit-md rounded-2xl border border-surface-container">
 <div>© 2025 Clínicas Vita S.L. Red Sanitaria Asistencial Concertada. Todos los derechos reservados.</div>
 <div class="flex items-center gap-unit-lg">
-<a class="hover:text-primary transition-colors" href="#">Aviso Legal</a>
-<a class="hover:text-primary transition-colors" href="#">Política de Privacidad Médica RGPD</a>
+<a class="hover:text-primary transition-colors" href="../../aviso-legal/index.html">Aviso Legal</a>
+<a class="hover:text-primary transition-colors" href="../../politica-privacidad/index.html">Política de Privacidad Médica RGPD</a>
 <a class="hover:text-primary transition-colors" href="#">Código Deontológico</a>
 <a class="hover:text-primary transition-colors" href="#">Accesibilidad WCAG</a>
 </div>

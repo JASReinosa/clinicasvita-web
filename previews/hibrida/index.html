@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/brand/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/brand/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" href="../../assets/img/brand/apple-touch-icon.png"/>
+
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="robots" content="noindex, nofollow"/>
@@ -95,14 +100,8 @@
     <div class="h-20 flex items-center justify-between gap-4">
       
       <!-- Logotipo Oficial -->
-      <a href="#" class="flex items-center gap-3 shrink-0 group">
-        <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shadow-md group-hover:bg-secondary transition-colors">
-          <span class="material-symbols-outlined text-teal-300 text-[26px]">vital_signs</span>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-heading text-xl text-primary tracking-tight font-extrabold leading-tight">Clínicas Vita</span>
-          <span class="text-[10px] uppercase tracking-widest text-secondary font-bold">Red Nacional Asistencial & Triaje</span>
-        </div>
+      <a href="#" class="flex items-center gap-3 shrink-0 group" title="Clínicas Vita — Red Nacional Asistencial &amp; Triaje">
+        <img src="../../assets/img/brand/logo-horizontal.svg" alt="Clínicas Vita" class="h-9 sm:h-10 w-auto">
       </a>
 
       <!-- Conmutador de Estado Asistencial (HealthTech Feature) -->
@@ -644,7 +643,13 @@
         <h3 class="font-heading text-lg font-bold text-white mb-2">Solicitud de Homologación de Centro</h3>
         <p class="text-xs text-slate-400 mb-5">El departamento de expansión médica analizará su centro en menos de 24 horas.</p>
 
-        <form id="form-b2b-preview" class="space-y-3" onsubmit="event.preventDefault(); alert('Solicitud de adhesión recibida. El departamento de expansión contactará con su centro.');">
+        <div id="b2b-hibrida-feedback" class="hidden p-5 rounded-2xl bg-teal-950/60 border border-teal-500/40 text-teal-200 text-center space-y-2 mb-4">
+          <span class="material-symbols-outlined text-teal-400 text-3xl">check_circle</span>
+          <p class="font-heading font-bold text-sm text-white">Solicitud de Homologación Registrada</p>
+          <p class="text-xs text-teal-300/80">El departamento de expansión médica contactará con su centro en un plazo máximo de 24 horas laborables.</p>
+        </div>
+
+        <form id="form-b2b-preview" class="space-y-3" onsubmit="event.preventDefault(); document.getElementById('b2b-hibrida-feedback').classList.remove('hidden'); this.classList.add('hidden');">
           <div>
             <label class="block text-[11px] font-bold text-slate-300 mb-1">Nombre del Centro o Clínica</label>
             <input type="text" required placeholder="Ej: Clínica San Miguel Fisioterapia" class="w-full h-10 px-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:outline-none focus:border-teal-400 transition-colors"/>
@@ -680,10 +685,9 @@
       
       <!-- Col 1: Marca -->
       <div class="space-y-3">
-        <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-teal-600 flex items-center justify-center text-white font-bold text-sm">V</div>
-          <span class="font-heading font-bold text-white text-base">Clínicas Vita</span>
-        </div>
+        <a href="#" class="inline-block mb-3" title="Clínicas Vita">
+      <img src="../../assets/img/brand/logo-horizontal-white.svg" alt="Clínicas Vita" class="h-8 sm:h-9 w-auto">
+    </a>
         <p class="text-xs text-slate-500 leading-relaxed">
           Red médica independiente para lesionados de tráfico. Asistencia traumatológica, diagnóstico por resonancia y fisioterapia sin coste para el paciente.
         </p>
