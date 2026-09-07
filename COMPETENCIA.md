@@ -46,21 +46,30 @@ Para garantizar que **Clínicas Vita** construya una identidad y autoridad propi
 
 ## 3. Mapeo del Ecosistema Competitivo Nacional en España
 
-Además de Clínicas Nuba, el mercado se divide en tres perfiles de competidores:
+Aclarado el posicionamiento estratégico de **fisioterapia, traumatología y asistencia integral sin coste para el lesionado**, el mercado se estructura en cuatro perfiles de competidores:
 
-### A. Grandes Grupos Hospitalarios Privados (Unidades de Tráfico)
-* **Ejemplos:** *Quirónsalud Unidades de Tráfico*, *Vithas Tráfico*, *HM Hospitales*, *Grupo Recoletas*.
-* **Puntos Fuertes:** Autoridad de marca hospitalaria y tecnología diagnóstica avanzada en grandes capitales.
-* **Puntos Débiles:** Trato impersonal, procesos burocráticos lentos, tiempos de espera en consultas y poca agilidad para fisioterapia continuada cercana al paciente en barrios y poblaciones medianas.
+### 1. Competidor Nacional Directo (Redes de Asistencia)
+* **Clínicas Nuba (`clinicasnuba.com`):** Es el rival más directo en España. Sigue un modelo operativo idéntico: ofrece asistencia y rehabilitación gratuita al lesionado gestionando el cobro directamente con las aseguradoras (B2C), y capta clínicas asociadas para expandir su red ofreciendo derivación de pacientes y gestión administrativa (B2B).
 
-### B. Clínicas Privadas Locales Especializadas
-* **Ejemplos:** *Clínica Rozalén* (Madrid), *Vital Clinic*, *Fisiodrid*, *Fisioterapia Valencia*, *Clínica San Vicente*.
-* **Puntos Fuertes:** Excelente reputación médica local y atención cercana.
-* **Puntos Débiles:** Cobertura geográfica limitada a su propia ciudad o barrio; no ofrecen solución de red nacional.
+### 2. Grandes Grupos Hospitalarios (Unidades de Tráfico)
+Compiten con gran autoridad de marca y medios tecnológicos, aunque su debilidad es un trato más lento, impersonal y con mayores tiempos de espera para iniciar la rehabilitación:
+* **Vithas Tráfico:** Con fuerte presencia en el Sur (Málaga, Granada, Almería), lo que exige especial atención en nuestra estrategia del Plan Sur.
+* **Quirónsalud Unidades de Tráfico:** Red hospitalaria con cobertura metropolitana pero con saturación en triaje.
+* **HM Hospitales:** Fuerte en la zona centro (Madrid).
+* **Grupo Recoletas:** Presencia en Castilla y León y áreas de influencia.
 
-### C. Redes de Derivación e Intermediación
-* **Ejemplos:** *Grupo Recupérate*, *Cobertura Accidente Tráfico*.
-* **Puntos Débiles:** Falta de identidad de marca clínica; imagen percibida más como correduría o intermediario comercial que como institución sanitaria de confianza.
+### 3. Clínicas Privadas Locales Especializadas
+Tienen una reputación excelente en sus zonas pero carecen de una red o cobertura nacional:
+* **Clínica Rozalén** e **Fisiodrid** (Madrid).
+* **Fisioterapia Valencia** (Comunidad Valenciana).
+* **Clínica San Vicente** (Madrid, neurorrehabilitación y politraumatizados).
+* **Vital Clinic**.
+* **Clínica Vita Nova** (Elche, Alicante): Centro polivalente autorizado que ofrece fisioterapia traumatológica y deportiva, además de Pilates, que genera cierta colisión de marca local en la provincia de Alicante (debe tenerse en cuenta para el SEO local y campañas en la zona levantina).
+
+### 4. Redes de Derivación e Intermediación
+Actúan como captadores de pacientes pero carecen de la identidad de una marca clínica o institución sanitaria propia, percibiéndose más como corredurías de seguros o intermediarios comerciales:
+* **Grupo Recupérate**.
+* **Cobertura Accidente Tráfico**.
 
 ---
 
