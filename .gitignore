@@ -1,0 +1,13 @@
+# Dependencias Node
+node_modules/
+npm-debug.log*
+
+# Archivos de sistema y logs
+.DS_Store
+*.log
+scratch/
+scratch_*
+
+# Entornos y claves
+.env
+.env.local
