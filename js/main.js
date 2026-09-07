@@ -69,13 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const formData = new FormData(formB2C);
+            const servicioReq = formData.get('servicio_requerido');
+            const rawMsg = formData.get('mensaje') || "Solicitud de asistencia médica tras accidente";
+            const fullMsg = servicioReq ? `[${servicioReq}] ${rawMsg}` : rawMsg;
+
             const payload = {
                 tipo: "B2C_Lesionado",
                 nombre: formData.get('nombre') || "",
                 telefono: formData.get('telefono') || "",
                 email: formData.get('email') || "",
                 provincia: formData.get('provincia') || "",
-                mensaje: formData.get('mensaje') || "Solicitud de asistencia médica tras accidente"
+                mensaje: fullMsg
             };
 
             window.sendLeadToVitaWebhook(payload);
