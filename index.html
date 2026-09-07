@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínicas Vita — Red Nacional de Asistencia Médica a Lesionados de Tráfico</title>
-    <meta name="description" content="Atención médica integral, fisioterapia avanzada y diagnóstico por imagen para lesionados de tráfico en toda España. Libre elección de clínica, sin adelantar dinero.">
-    <meta name="theme-color" content="#0A1931">
+    <meta name="description" content="Atención médica integral, fisioterapia avanzada y diagnóstico por imagen para lesionados de tráfico en toda España. Libre elección de centro médico sin adelantar dinero.">
+    <meta name="theme-color" content="#FFFFFF">
 
-    <!-- OpenGraph & Social Card -->
+    <!-- OpenGraph & Redes Sociales -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Clínicas Vita — Red Médica Nacional de Tráfico">
-    <meta property="og:description" content="Recupera tu salud tras un accidente de tráfico sin adelantar dinero. Atención traumatológica, fisioterapia y pruebas diagnósticas en toda España.">
+    <meta property="og:description" content="Recupera tu salud tras un accidente de tráfico sin adelantar dinero. Tratamiento médico traumatológico, fisioterapia y pruebas diagnósticas en toda España.">
     <meta property="og:image" content="assets/img/brand/og-image.jpg">
     <meta property="og:url" content="https://clinicasvita.com/">
     <meta name="twitter:card" content="summary_large_image">
@@ -20,12 +20,12 @@
     <link rel="alternate icon" type="image/png" href="assets/img/brand/favicon-32x32.png">
     <link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter (Tipografía Limpia y Legible) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS con paleta oficial Vita -->
+    <!-- Tailwind CSS con Sistema Material Design Clínico -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -34,14 +34,15 @@
             colors: {
               vita: {
                 blue: '#0050E7',
-                'blue-dark': '#003DB3',
-                'blue-light': '#EBF2FF',
+                'blue-hover': '#003DB3',
+                'blue-surface': '#F0F5FF',
                 navy: '#0A1931',
-                'navy-dark': '#050E1E',
                 slate: '#1E293B',
+                muted: '#64748B',
                 green: '#25D366',
-                emerald: '#10B981',
-                bg: '#F8FAFC'
+                surface: '#FFFFFF',
+                'surface-alt': '#F8FAFC',
+                border: '#E2E8F0'
               }
             },
             fontFamily: {
@@ -53,138 +54,137 @@
       }
     </script>
 </head>
-<body class="bg-vita-bg font-sans text-slate-800 antialiased selection:bg-vita-blue selection:text-white">
+<body class="bg-vita-surface font-sans text-slate-800 antialiased selection:bg-vita-blue selection:text-white">
 
-    <!-- TOPBAR INFORMATIVA -->
-    <div class="bg-vita-navy text-slate-300 text-xs py-2 px-4 border-b border-white/10 hidden sm:block">
+    <!-- BARRA SUPERIOR INSTITUCIONAL (Limpia y sobria, estilo Material) -->
+    <div class="bg-vita-surface-alt border-b border-vita-border text-slate-600 text-xs py-2 px-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Coordinación Médica Nacional Activa
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 text-slate-700 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Red de Asistencia Sanitaria en las 52 Provincias
                 </span>
-                <span class="text-slate-500">|</span>
-                <span>Asistencia sin adelantar dinero • Libre elección de centro</span>
+                <span class="text-slate-300 hidden sm:inline">•</span>
+                <span class="text-slate-500 hidden sm:inline">Libre elección de clínica médica con cobertura de tu aseguradora</span>
             </div>
-            <div class="flex items-center gap-6">
-                <a href="#contacto" data-vita-phone-link class="hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+            <div class="flex items-center gap-5 text-slate-600 font-medium">
+                <a href="#contacto" data-vita-phone-link class="hover:text-vita-blue transition-colors flex items-center gap-1.5">
                     <svg class="w-3.5 h-3.5 text-vita-blue" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"></path></svg>
-                    <span data-vita-phone data-vita-fallback="Solicitar Asistencia Médica"></span>
+                    <span data-vita-phone data-vita-fallback="Atención Inmediata"></span>
                 </a>
-                <a href="mailto:info@clinicasvita.com" data-vita-email-b2c class="hover:text-white transition-colors hidden md:inline">info@clinicasvita.com</a>
+                <span class="text-slate-300">|</span>
+                <a href="mailto:info@clinicasvita.com" data-vita-email-b2c class="hover:text-vita-blue transition-colors hidden md:inline">info@clinicasvita.com</a>
             </div>
         </div>
     </div>
 
-    <!-- HEADER INSTITUCIONAL VITA -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <!-- HEADER DE NAVEGACIÓN PRINCIPAL -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-vita-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- LOGO OFICIAL -->
-            <a href="/" class="flex items-center gap-3 group" title="Clínicas Vita — Inicio">
-                <img src="assets/img/brand/logo-horizontal.svg" alt="Clínicas Vita — Red Médica" class="h-10 sm:h-11 w-auto">
+            <a href="/" class="flex items-center gap-3" title="Clínicas Vita — Inicio">
+                <img src="assets/img/brand/logo-horizontal.svg" alt="Clínicas Vita" class="h-10 w-auto">
             </a>
 
-            <!-- NAVEGACIÓN DUAL (B2C & B2B) -->
-            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
-                <a href="#lesionados" class="hover:text-vita-blue transition-colors">Atención Lesionado</a>
-                <a href="#rehabilitacion" class="hover:text-vita-blue transition-colors">Fisioterapia</a>
-                <a href="#pruebas" class="hover:text-vita-blue transition-colors">Traumatología & Pruebas</a>
-                <a href="#valores" class="hover:text-vita-blue transition-colors">Método Vita</a>
-                <a href="#red-medica" class="text-vita-blue font-bold bg-vita-blue-light px-3.5 py-1.5 rounded-lg border border-vita-blue/20 hover:bg-vita-blue hover:text-white transition-all flex items-center gap-1.5">
-                    <span>Unirse a la Red Médica</span>
-                    <span class="text-[10px] bg-vita-navy text-white px-1.5 py-0.5 rounded font-extrabold uppercase">Sur</span>
+            <!-- NAVEGACIÓN CLÍNICA (Equilibrada y sobria) -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#lesionados" class="hover:text-vita-blue transition-colors">Atención al Lesionado</a>
+                <a href="#proceso" class="hover:text-vita-blue transition-colors">Proceso Médico</a>
+                <a href="#especialidades" class="hover:text-vita-blue transition-colors">Fisioterapia & Traumatología</a>
+                <a href="#valores" class="hover:text-vita-blue transition-colors">Compromiso Vita</a>
+                <a href="#red-medica" class="text-vita-blue font-semibold hover:text-vita-blue-hover transition-colors flex items-center gap-1.5">
+                    <span>Área Centros Médicos</span>
+                    <span class="text-[10px] bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded border border-slate-200">Red Sur</span>
                 </a>
             </nav>
 
-            <!-- ACCIONES RÁPIDAS -->
+            <!-- ACCIONES PRIMARIAS -->
             <div class="flex items-center gap-3">
-                <a href="#contacto" data-vita-whatsapp-link class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-vita-green hover:bg-[#20bd5a] text-white font-bold text-xs shadow-sm transition-all" title="Contactar por WhatsApp">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.084-1.92-.45-1.512-.625-2.496-2.164-2.572-2.264-.075-.101-.607-.807-.607-1.54s.383-1.096.522-1.246c.14-.149.303-.187.404-.187.102 0 .204.002.294.006.095.004.222-.036.347.264.129.31.442 1.077.481 1.156.039.078.064.168.012.271-.052.102-.078.168-.155.259-.077.09-.163.201-.232.271-.077.078-.158.163-.067.319.09.156.402.663.862 1.073.593.528 1.092.691 1.248.769.156.078.247.065.337-.039.09-.104.389-.452.493-.607.103-.156.207-.129.347-.078s.893.421 1.048.499c.156.078.259.117.298.182.039.066.039.382-.105.787z"/></svg>
-                    <span class="hidden sm:inline">WhatsApp</span>
+                <a href="#contacto" data-vita-whatsapp-link class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs hover:border-emerald-500 hover:text-emerald-700 transition-all">
+                    <svg class="w-4 h-4 fill-[#25D366]" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.084-1.92-.45-1.512-.625-2.496-2.164-2.572-2.264-.075-.101-.607-.807-.607-1.54s.383-1.096.522-1.246c.14-.149.303-.187.404-.187.102 0 .204.002.294.006.095.004.222-.036.347.264.129.31.442 1.077.481 1.156.039.078.064.168.012.271-.052.102-.078.168-.155.259-.077.09-.163.201-.232.271-.077.078-.158.163-.067.319.09.156.402.663.862 1.073.593.528 1.092.691 1.248.769.156.078.247.065.337-.039.09-.104.389-.452.493-.607.103-.156.207-.129.347-.078s.893.421 1.048.499c.156.078.259.117.298.182.039.066.039.382-.105.787z"/></svg>
+                    <span>WhatsApp</span>
                 </a>
-                <a href="#contacto" class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-xl bg-vita-blue text-white font-bold text-xs sm:text-sm shadow-md hover:bg-vita-blue-dark transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-vita-blue focus:ring-offset-2">
-                    Solicitar Asistencia
+                <a href="#contacto" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-vita-blue hover:bg-vita-blue-hover text-white font-semibold text-sm shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-vita-blue/20">
+                    Pedir Cita Médica
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION (B2C - 75% FOCUS) -->
-    <section id="lesionados" class="relative overflow-hidden bg-gradient-to-b from-vita-navy-dark via-vita-navy to-[#0D2144] text-white py-16 sm:py-24">
-        <!-- Luces y efectos de fondo -->
-        <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,_#0050E7_0%,_transparent_50%)]"></div>
-        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-vita-bg to-transparent opacity-10 pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- HERO SECTION: SERENO, CLÍNICO, CON ESPACIOS ABIERTOS (MATERIAL DESIGN) -->
+    <section id="lesionados" class="py-16 sm:py-24 bg-white border-b border-vita-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 
-                <!-- COLUMNA TEXTO HERO B2C -->
+                <!-- COLUMNA PRINCIPAL DE AUTORIDAD Y DIAGNÓSTICO (7 COLUMNAS) -->
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-vita-blue/20 border border-vita-blue/40 text-vita-blue-light text-xs font-bold tracking-wide uppercase">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        Atención Médica Inmediata en Toda España
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold">
+                        <span>Servicio de Asistencia Médica Integral a Lesionados</span>
                     </div>
-                    
-                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                        Tratamiento Médico y Fisioterapia tras un Accidente de Tráfico <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-300">Sin Adelantar Dinero</span>
+
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-vita-navy tracking-tight leading-[1.15]">
+                        Recupera tu salud tras un accidente de tráfico <span class="text-vita-blue">sin adelantar dinero</span>
                     </h1>
-                    
-                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-                        Tienes derecho legal a la <strong>libre elección de centro médico</strong>. Tramitamos tu cobertura médica directamente con tu aseguradora de auto para que recibas consultas traumatológicas, resonancias magnéticas y rehabilitación en clínicas especializadas de tu provincia sin coste para ti.
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+                        Tienes derecho a la <strong>libre elección de centro médico</strong>. Tramitamos tu cobertura asistencial directamente con la compañía de seguros para que recibas consultas traumatológicas, pruebas diagnósticas y fisioterapia continuada en clínicas de primer nivel cercanas a ti, sin coste para ti.
                     </p>
 
-                    <!-- 3 PILARES DE CONFIANZA MÉDICA B2C -->
+                    <!-- 3 PUNTOS CLAVE CLÍNICOS (TARJETAS MATERIAL OUTLINED) -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm hover:border-vita-blue/50 transition-colors">
-                            <div class="text-emerald-400 font-extrabold text-base mb-1">100% Cubierto</div>
-                            <div class="text-xs text-slate-300">Tu seguro de vehículo asume la asistencia sanitaria. Sin pagos por adelantado.</div>
+                        <div class="p-4 rounded-xl border border-vita-border bg-vita-surface-alt">
+                            <h3 class="font-bold text-vita-navy text-sm mb-1">Sin Desembolso</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">Tu seguro de vehículo asume el coste del tratamiento médico.</p>
                         </div>
-                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm hover:border-vita-blue/50 transition-colors">
-                            <div class="text-blue-300 font-extrabold text-base mb-1">Sin Esperas</div>
-                            <div class="text-xs text-slate-300">Citas rápidas para resonancia, TAC y triaje traumatológico inicial.</div>
+                        <div class="p-4 rounded-xl border border-vita-border bg-vita-surface-alt">
+                            <h3 class="font-bold text-vita-navy text-sm mb-1">Agilidad Diagnóstica</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">Resonancia magnética y ecografía sin listas de espera.</p>
                         </div>
-                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm hover:border-vita-blue/50 transition-colors">
-                            <div class="text-emerald-400 font-extrabold text-base mb-1">Rehabilitación VIP</div>
-                            <div class="text-xs text-slate-300">Fisioterapia continuada y personalizada hasta el alta clínica definitiva.</div>
+                        <div class="p-4 rounded-xl border border-vita-border bg-vita-surface-alt">
+                            <h3 class="font-bold text-vita-navy text-sm mb-1">Fisioterapia Continua</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">Sesiones personalizadas hasta tu completa recuperación funcional.</p>
                         </div>
                     </div>
 
-                    <!-- RECORDATORIO MÉDICO LEGAL -->
-                    <div class="flex items-start gap-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-200 text-xs">
-                        <svg class="w-5 h-5 flex-shrink-0 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-                        <span><strong>Plazo prioritario de 72 horas:</strong> Es crucial que acudas o nos contactes dentro de las 72h posteriores al accidente para que el seguro no cuestione el nexo causal de tus lesiones.</span>
+                    <!-- RECORDATORIO MÉDICO SERENO -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start gap-3">
+                        <svg class="w-5 h-5 text-vita-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p>
+                            <strong>Criterio de las 72 horas:</strong> Es fundamental realizar la primera valoración médica dentro de las 72 horas posteriores al siniestro para acreditar el nexo causal de tus lesiones ante la aseguradora.
+                        </p>
                     </div>
                 </div>
 
-                <!-- COLUMNA FORMULARIO RÁPIDO B2C -->
+                <!-- COLUMNA FORMULARIO DE ASISTENCIA (5 COLUMNAS - ESTILO MATERIAL ELEVATED) -->
                 <div class="lg:col-span-5" id="contacto">
-                    <div class="bg-white rounded-3xl p-6 sm:p-8 text-slate-900 shadow-2xl border border-slate-100 relative">
-                        <div class="absolute -top-3 right-6 bg-vita-blue text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-                            Coordinación Inmediata
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+                        <div class="border-b border-slate-100 pb-4 mb-6">
+                            <h2 class="text-xl font-bold text-vita-navy">Solicitud de Asistencia Médica</h2>
+                            <p class="text-xs text-slate-500 mt-1">Un coordinador de Clínicas Vita te contactará para derivarte al centro adecuado.</p>
                         </div>
-                        <h2 class="text-xl font-bold text-slate-900 mb-1">Solicitar Asistencia Médica</h2>
-                        <p class="text-xs text-slate-600 mb-6">Déjanos tus datos y un coordinador de Clínicas Vita te contactará en minutos para derivarte al centro más cercano.</p>
 
                         <form id="form-b2c-asistencia" class="space-y-4">
                             <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo *</label>
-                                <input type="text" name="nombre" required placeholder="Ej. Antonio Morales" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Nombre y Apellidos *</label>
+                                <input type="text" name="nombre" required placeholder="Tu nombre completo" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue focus:border-vita-blue text-sm transition-all">
                             </div>
+
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Teléfono Móvil *</label>
-                                    <input type="tel" name="telefono" required placeholder="600 000 000" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Teléfono Móvil *</label>
+                                    <input type="tel" name="telefono" required placeholder="600 000 000" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue focus:border-vita-blue text-sm transition-all">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Email</label>
-                                    <input type="email" name="email" placeholder="tu@correo.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Email</label>
+                                    <input type="email" name="email" placeholder="correo@ejemplo.com" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue focus:border-vita-blue text-sm transition-all">
                                 </div>
                             </div>
+
                             <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Provincia del Accidente *</label>
-                                <select name="provincia" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm bg-white">
-                                    <option value="">-- Selecciona tu Provincia (52 Provincias) --</option>
-                                    <optgroup label="Andalucía (Convocatoria Red Sur)">
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Provincia del Accidente *</label>
+                                <select name="provincia" required class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue focus:border-vita-blue text-sm bg-white transition-all">
+                                    <option value="">-- Selecciona tu provincia --</option>
+                                    <optgroup label="Andalucía (Cobertura Preferente)">
                                         <option value="Sevilla">Sevilla</option>
                                         <option value="Málaga">Málaga</option>
                                         <option value="Granada">Granada</option>
@@ -194,71 +194,38 @@
                                         <option value="Jaén">Jaén</option>
                                         <option value="Huelva">Huelva</option>
                                     </optgroup>
-                                    <optgroup label="Comunidades Principales">
+                                    <optgroup label="Resto de Comunidades">
                                         <option value="Madrid">Madrid</option>
                                         <option value="Barcelona">Barcelona</option>
                                         <option value="Valencia">Valencia</option>
                                         <option value="Alicante">Alicante</option>
                                         <option value="Zaragoza">Zaragoza</option>
                                         <option value="Murcia">Murcia</option>
-                                        <option value="Vizcaya">Vizcaya / Bilbao</option>
+                                        <option value="Vizcaya">Vizcaya</option>
                                         <option value="A Coruña">A Coruña</option>
-                                        <option value="Baleares">Illes Balears</option>
-                                        <option value="Las Palmas">Las Palmas</option>
-                                        <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
-                                    </optgroup>
-                                    <optgroup label="Otras Provincias de España">
-                                        <option value="Álava">Álava</option>
-                                        <option value="Albacete">Albacete</option>
                                         <option value="Asturias">Asturias</option>
-                                        <option value="Ávila">Ávila</option>
-                                        <option value="Badajoz">Badajoz</option>
-                                        <option value="Burgos">Burgos</option>
-                                        <option value="Cáceres">Cáceres</option>
-                                        <option value="Cantabria">Cantabria</option>
-                                        <option value="Castellón">Castellón</option>
-                                        <option value="Ciudad Real">Ciudad Real</option>
-                                        <option value="Cuenca">Cuenca</option>
-                                        <option value="Gipuzkoa">Gipuzkoa</option>
-                                        <option value="Girona">Girona</option>
-                                        <option value="Guadalajara">Guadalajara</option>
-                                        <option value="Huesca">Huesca</option>
-                                        <option value="La Rioja">La Rioja</option>
-                                        <option value="León">León</option>
-                                        <option value="Lleida">Lleida</option>
-                                        <option value="Lugo">Lugo</option>
-                                        <option value="Navarra">Navarra</option>
-                                        <option value="Ourense">Ourense</option>
-                                        <option value="Palencia">Palencia</option>
-                                        <option value="Pontevedra">Pontevedra</option>
-                                        <option value="Salamanca">Salamanca</option>
-                                        <option value="Segovia">Segovia</option>
-                                        <option value="Soria">Soria</option>
-                                        <option value="Tarragona">Tarragona</option>
-                                        <option value="Teruel">Teruel</option>
-                                        <option value="Toledo">Toledo</option>
-                                        <option value="Valladolid">Valladolid</option>
-                                        <option value="Zamora">Zamora</option>
-                                        <option value="Ceuta">Ceuta</option>
-                                        <option value="Melilla">Melilla</option>
+                                        <option value="Baleares">Baleares</option>
+                                        <option value="Las Palmas">Las Palmas</option>
+                                        <option value="Tenerife">Santa Cruz de Tenerife</option>
+                                        <option value="Otra">Otra provincia de España</option>
                                     </optgroup>
                                 </select>
                             </div>
+
                             <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Describe tus síntomas / accidente</label>
-                                <textarea name="mensaje" rows="2" placeholder="Ej. Dolor cervical y mareos tras alcance trasero ayer..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm"></textarea>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Describe tus síntomas o dudas</label>
+                                <textarea name="mensaje" rows="2" placeholder="Dolor cervical, mareos, dolor lumbar tras frenazo..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue focus:border-vita-blue text-sm transition-all"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-vita-blue hover:bg-vita-blue-dark text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-                                <span>Solicitar Asistencia Médica Sin Coste</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <button type="submit" class="w-full py-3 px-4 rounded-xl bg-vita-blue hover:bg-vita-blue-hover text-white font-semibold text-sm shadow-sm transition-all">
+                                Solicitar Asistencia Médica Sin Coste
                             </button>
 
-                            <div id="b2c-success-feedback" class="hidden p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium">
-                                ✓ <strong>Solicitud médica recibida.</strong> Nuestro equipo de coordinación asistencial se pondrá en contacto contigo de forma inmediata.
+                            <div id="b2c-success-feedback" class="hidden p-3.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs">
+                                ✓ <strong>Solicitud recibida.</strong> Nuestro equipo de coordinación médica se pondrá en contacto contigo de inmediato.
                             </div>
 
-                            <p class="text-[11px] text-slate-500 text-center">Protección de datos garantizada. Sin compromiso ni desembolso previo.</p>
+                            <p class="text-[11px] text-slate-500 text-center">Tus datos médicos se tratan bajo estricta confidencialidad médica (RGPD).</p>
                         </form>
                     </div>
                 </div>
@@ -267,130 +234,104 @@
         </div>
     </section>
 
-    <!-- LOS 5 VALORES DE MARCA VITA (EXTRAÍDOS DEL DOSSIER OFICIAL) -->
-    <section id="valores" class="py-16 bg-white border-b border-slate-100">
+    <!-- EL PROCESO ASISTENCIAL PASO A PASO (CLARIDAD Y TRANQUILIDAD PARA EL PACIENTE) -->
+    <section id="proceso" class="py-16 bg-vita-surface-alt border-b border-vita-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-bold uppercase tracking-wider text-vita-blue bg-vita-blue-light px-3 py-1 rounded-full border border-vita-blue/20">Identidad y Compromiso Vita</span>
-                <h2 class="text-3xl font-extrabold text-slate-900 mt-2 mb-3">Salud, Confianza y Movimiento</h2>
-                <p class="text-slate-600 text-sm sm:text-base">Los 5 pilares que rigen la atención a cada uno de nuestros pacientes y la relación con nuestra red médica.</p>
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <span class="text-xs font-semibold uppercase tracking-wider text-vita-blue">Itinerario de Salud</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-vita-navy mt-1">Cómo funciona tu recuperación en Clínicas Vita</h2>
+                <p class="text-slate-600 text-sm mt-2">Un proceso médico ordenado, transparente y sin gestiones burocráticas para ti.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                <!-- 1. CONFIANZA -->
-                <div class="p-5 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/30 transition-all hover:shadow-sm">
-                    <div class="w-10 h-10 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-lg mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">Confianza</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Seguridad, transparencia y profesionalidad médica en cada informe.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- PASO 1 -->
+                <div class="bg-white p-6 rounded-xl border border-vita-border">
+                    <span class="text-xs font-bold text-vita-blue font-mono">01</span>
+                    <h3 class="font-bold text-vita-navy text-base mt-2 mb-1.5">Triaje y Consulta Inicial</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Evaluación física por médico traumatólogo o rehabilitador en la clínica más cercana para registrar todas las lesiones del accidente.</p>
                 </div>
 
-                <!-- 2. CERCANÍA -->
-                <div class="p-5 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/30 transition-all hover:shadow-sm">
-                    <div class="w-10 h-10 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-lg mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">Cercanía</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Escuchamos, acompañamos y estamos a tu lado durante toda la recuperación.</p>
+                <!-- PASO 2 -->
+                <div class="bg-white p-6 rounded-xl border border-vita-border">
+                    <span class="text-xs font-bold text-vita-blue font-mono">02</span>
+                    <h3 class="font-bold text-vita-navy text-base mt-2 mb-1.5">Pruebas de Imagen</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Prescripción y realización preferente de resonancias magnéticas, ecografías y radiografías para descartar daños ocultos.</p>
                 </div>
 
-                <!-- 3. MOVIMIENTO -->
-                <div class="p-5 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/30 transition-all hover:shadow-sm">
-                    <div class="w-10 h-10 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-lg mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">Movimiento</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Avanzamos contigo hacia tu mejor versión física y funcional.</p>
+                <!-- PASO 3 -->
+                <div class="bg-white p-6 rounded-xl border border-vita-border">
+                    <span class="text-xs font-bold text-vita-blue font-mono">03</span>
+                    <h3 class="font-bold text-vita-navy text-base mt-2 mb-1.5">Rehabilitación Continuada</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Plan de fisioterapia individual adaptado a tu evolución: terapia manual, electroterapia y reeducación funcional.</p>
                 </div>
 
-                <!-- 4. BIENESTAR -->
-                <div class="p-5 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/30 transition-all hover:shadow-sm">
-                    <div class="w-10 h-10 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-lg mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">Bienestar</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Cuidado integral de la salud física y emocional post-accidente.</p>
-                </div>
-
-                <!-- 5. VERSATILIDAD -->
-                <div class="p-5 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/30 transition-all hover:shadow-sm">
-                    <div class="w-10 h-10 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-lg mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">Versatilidad</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Atención adaptada a conductores, ocupantes, peatones y motoristas.</p>
+                <!-- PASO 4 -->
+                <div class="bg-white p-6 rounded-xl border border-vita-border">
+                    <span class="text-xs font-bold text-vita-blue font-mono">04</span>
+                    <h3 class="font-bold text-vita-navy text-base mt-2 mb-1.5">Alta e Informe Médico</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Emisión del informe clínico completo con detalle de la evolución, tratamientos recibidos y estabilización de secuelas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SILO ASISTENCIAL MÉDICO (B2C) -->
-    <section id="rehabilitacion" class="py-20 bg-vita-bg">
+    <!-- ESPECIALIDADES CLÍNICAS (FISIOTERAPIA Y TRAUMATOLOGÍA) -->
+    <section id="especialidades" class="py-16 bg-white border-b border-vita-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                    <span class="text-xs font-bold uppercase tracking-wider text-vita-blue bg-vita-blue-light px-3 py-1 rounded-full border border-vita-blue/20">Tratamiento Integral</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Fisioterapia y Rehabilitación Personalizada Sin Coste</h2>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        Tras un impacto o frenazo, lesiones como el <strong>latigazo cervical</strong>, contracturas dorsolumbares o traumatismos de extremidades requieren intervención inmediata para evitar que se conviertan en secuelas crónicas.
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-vita-blue">Atención Especializada</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-vita-navy mt-1 mb-4">Tratamiento de las Patologías más Frecuentes</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        El impacto en vehículos suele desencadenar fuerzas de aceleración y desaceleración que afectan a músculos, ligamentos y discos vertebrales. Nuestro equipo coordina la asistencia en clínicas equipadas con tecnología de última generación.
                     </p>
-                    <ul class="space-y-3.5 text-sm text-slate-700">
-                        <li class="flex items-start gap-3">
-                            <span class="text-emerald-500 font-bold text-lg leading-none">✓</span>
-                            <span><strong>Sesiones individuales de fisioterapia:</strong> Terapia manual, punción seca, diatermia y reeducación postural.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-emerald-500 font-bold text-lg leading-none">✓</span>
-                            <span><strong>Seguimiento por médico rehabilitador:</strong> Informes periódicos de evolución y ajuste del tratamiento.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-emerald-500 font-bold text-lg leading-none">✓</span>
-                            <span><strong>Libre elección garantizada:</strong> Eliges la clínica más cercana a tu domicilio o trabajo, no la que te imponga la aseguradora.</span>
-                        </li>
-                    </ul>
-                    <div class="pt-2">
-                        <a href="#contacto" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-vita-navy hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all">
-                            <span>Solicitar Cita de Fisioterapia</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </a>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-vita-blue-surface text-vita-blue flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900">Latigazo y Esguince Cervical</h3>
+                                <p class="text-xs text-slate-500">Terapia específica para reducir contracturas, mareos, rigidez y cefaleas tensionales.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-vita-blue-surface text-vita-blue flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900">Dorsalgias y Lumbalgias Postraumáticas</h3>
+                                <p class="text-xs text-slate-500">Tratamiento descompresivo, reeducación postural y fortalecimiento del core.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-vita-blue-surface text-vita-blue flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900">Traumatismos Articulares (Hombro, Rodilla, Tobillo)</h3>
+                                <p class="text-xs text-slate-500">Readaptación funcional post-impacto en peatones, motoristas y ocupantes.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- DIAGNÓSTICO POR IMAGEN (SILO PRUEBAS) -->
-                <div class="lg:col-span-6" id="pruebas">
-                    <div class="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl space-y-6">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-                            <div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-vita-blue">Diagnóstico Avanzado</span>
-                                <h3 class="text-xl font-extrabold text-slate-900 mt-1">Pruebas Diagnósticas de Alta Resolución</h3>
-                            </div>
-                            <div class="w-12 h-12 rounded-2xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-2xl">
-                                🩻
-                            </div>
+                <div class="bg-vita-surface-alt p-8 rounded-2xl border border-vita-border">
+                    <h3 class="text-lg font-bold text-vita-navy mb-2">Diagnóstico de Precisión por Imagen</h3>
+                    <p class="text-xs text-slate-600 mb-6">
+                        La confirmación diagnóstica mediante imagen médica es la base de un tratamiento seguro y la prueba clínica irrefutable de la lesión.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <div class="font-bold text-slate-900 mb-1">Resonancia Magnética</div>
+                            <div class="text-slate-500">Detección de hernias discales, protusiones y edema óseo.</div>
                         </div>
-
-                        <p class="text-sm text-slate-600">
-                            Un diagnóstico certero es la clave para una recuperación completa y para justificar legalmente las consecuencias del accidente.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="p-4 rounded-xl bg-vita-bg border border-slate-100">
-                                <div class="font-bold text-slate-900 text-sm mb-1">Resonancia Magnética (RMN)</div>
-                                <div class="text-xs text-slate-500">Detección de hernias, protusiones discales y roturas tendinosas sin listas de espera.</div>
-                            </div>
-                            <div class="p-4 rounded-xl bg-vita-bg border border-slate-100">
-                                <div class="font-bold text-slate-900 text-sm mb-1">Ecografía Musculoesquelética</div>
-                                <div class="text-xs text-slate-500">Evaluación dinámica de ligamentos, desgarros y partes blandas en consulta.</div>
-                            </div>
-                            <div class="p-4 rounded-xl bg-vita-bg border border-slate-100">
-                                <div class="font-bold text-slate-900 text-sm mb-1">Radiología Digital & TAC</div>
-                                <div class="text-xs text-slate-500">Descarte inmediato de fisuras óseas, fracturas y lesiones articulares complejas.</div>
-                            </div>
-                            <div class="p-4 rounded-xl bg-vita-bg border border-slate-100">
-                                <div class="font-bold text-slate-900 text-sm mb-1">Informes Médico-Periciales</div>
-                                <div class="text-xs text-slate-500">Documentación detallada de secuelas y evolución clínica avalada por especialistas.</div>
-                            </div>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <div class="font-bold text-slate-900 mb-1">Ecografía Muscular</div>
+                            <div class="text-slate-500">Valoración dinámica en consulta de roturas fibrilares y tendones.</div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <div class="font-bold text-slate-900 mb-1">Radiología Digital</div>
+                            <div class="text-slate-500">Control óseo inmediato y descarte de fisuras vertebrales.</div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200">
+                            <div class="font-bold text-slate-900 mb-1">Informes Traumatológicos</div>
+                            <div class="text-slate-500">Documentación pericial de seguimiento y alta médica oficial.</div>
                         </div>
                     </div>
                 </div>
@@ -398,202 +339,172 @@
         </div>
     </section>
 
-    <!-- SECCIÓN B2B (25% FOCUS): EXPANSIÓN Y ADHESIÓN DE CENTROS MÉDICOS -->
-    <section id="red-medica" class="py-20 bg-white border-t border-slate-100 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <!-- CABECERA B2B -->
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-vita-navy text-white text-xs font-bold tracking-wide uppercase mb-4 shadow-sm">
-                    <span>Área Profesional & Centros Sanitarios</span>
+    <!-- COMPROMISO VITA (LOS 5 VALORES DE MARCA DEL DOSSIER) -->
+    <section id="valores" class="py-16 bg-vita-surface-alt border-b border-vita-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <span class="text-xs font-semibold uppercase tracking-wider text-vita-blue">Valores Institucionales</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-vita-navy mt-1">Nuestra Filosofía Asistencial</h2>
+                <p class="text-slate-600 text-sm mt-2">Los principios que definen el cuidado médico de cada paciente en la red Clínicas Vita.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                <div class="bg-white p-5 rounded-xl border border-vita-border">
+                    <div class="font-bold text-vita-navy text-sm mb-1">Confianza</div>
+                    <p class="text-xs text-slate-600 leading-relaxed">Seguridad, transparencia y profesionalidad clínica en cada etapa de la recuperación.</p>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
-                    Únete a la Red Nacional de Clínicas Vita
-                </h2>
-                <p class="text-slate-600 text-base leading-relaxed">
-                    Conectamos centros médicos rehabilitadores, policlínicas, unidades de traumatología y centros de diagnóstico por imagen con pacientes lesionados de tráfico derivados en toda España.
+                <div class="bg-white p-5 rounded-xl border border-vita-border">
+                    <div class="font-bold text-vita-navy text-sm mb-1">Cercanía</div>
+                    <p class="text-xs text-slate-600 leading-relaxed">Escuchamos, acompañamos y estamos a tu lado durante todo el proceso asistencial.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-vita-border">
+                    <div class="font-bold text-vita-navy text-sm mb-1">Movimiento</div>
+                    <p class="text-xs text-slate-600 leading-relaxed">Avanzamos contigo hacia tu mejor versión y recuperación funcional plena.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-vita-border">
+                    <div class="font-bold text-vita-navy text-sm mb-1">Bienestar</div>
+                    <p class="text-xs text-slate-600 leading-relaxed">Cuidado integral de la salud física y tranquilidad emocional del lesionado.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-vita-border">
+                    <div class="font-bold text-vita-navy text-sm mb-1">Versatilidad</div>
+                    <p class="text-xs text-slate-600 leading-relaxed">Protocolos adaptados a conductores, ocupantes, peatones y motoristas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREA PROFESIONAL B2B: ADHESIÓN DE CENTROS MÉDICOS Y CLÍNICAS (25% CONVERSIÓN) -->
+    <section id="red-medica" class="py-16 bg-white border-b border-vita-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">Para Profesionales Sanitarios</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-vita-navy mt-3">Únete a la Red Nacional de Clínicas Vita</h2>
+                <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                    Derivamos pacientes lesionados de tráfico a centros médicos, clínicas de fisioterapia y unidades de radiodiagnóstico en toda España.
                 </p>
-                
-                <!-- DESTACADO CONVOCATORIA RED SUR -->
-                <div class="mt-6 inline-flex items-center gap-3 p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm font-semibold">
-                    <span class="px-2 py-0.5 rounded bg-amber-500 text-white font-extrabold text-[11px] uppercase">Plan Prioritario</span>
-                    <span>Convocatoria abierta para centros sanitarios en el <strong>Sur de España (Andalucía)</strong>: Sevilla, Málaga, Granada, Córdoba, Cádiz, Almería, Jaén y Huelva.</span>
+
+                <!-- CONVOCATORIA PREFERENTE RED SUR -->
+                <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 inline-block font-medium">
+                    📍 <strong>Plan Preferente Sur (Andalucía):</strong> Apertura prioritaria de plazas para centros en Sevilla, Málaga, Granada, Córdoba, Cádiz, Almería, Jaén y Huelva.
                 </div>
             </div>
 
-            <!-- CUADÍCULA BENEFICIOS B2B -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
-                <div class="p-6 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/40 transition-all hover:shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-2xl mb-4">
-                        🏥
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-2">Flujo Recurrente</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Derivación constante de lesionados que eligen activamente tu clínica por proximidad y excelencia.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/40 transition-all hover:shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-2xl mb-4">
-                        ⚖️
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-2">Autonomía Médica</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Total libertad de criterio clínico en pautas de fisioterapia, sesiones y pruebas diagnósticas necesarias.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/40 transition-all hover:shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-2xl mb-4">
-                        📋
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-2">Cero Fricción</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Asistencia en la coordinación de pólizas y expedientes para facilitar la liquidación del tratamiento.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-vita-bg border border-slate-100 hover:border-vita-blue/40 transition-all hover:shadow-md">
-                    <div class="w-12 h-12 rounded-xl bg-vita-blue-light text-vita-blue flex items-center justify-center font-bold text-2xl mb-4">
-                        🤝
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-base mb-2">Alianza de Marca</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Integración en el directorio oficial de Clínicas Vita con visibilidad SEO local en tu provincia.</p>
-                </div>
-            </div>
-
-            <!-- FORMULARIO DE ADHESIÓN B2B -->
-            <div class="max-w-3xl mx-auto bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-slate-800">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-vita-blue text-white flex items-center justify-center font-bold">
-                        +
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white">Solicitud de Adhesión a la Red Vita</h3>
-                        <p class="text-xs text-slate-400">Directo al departamento de expansión: <span data-vita-email-b2b class="text-vita-blue-light font-mono">asociados@clinicasvita.com</span></p>
-                    </div>
-                </div>
+            <!-- FORMULARIO B2B ELEGANTE Y OUTLINED -->
+            <div class="max-w-2xl mx-auto bg-vita-surface-alt rounded-2xl border border-vita-border p-6 sm:p-8">
+                <h3 class="text-base font-bold text-vita-navy mb-1">Solicitud de Incorporación de Centro</h3>
+                <p class="text-xs text-slate-500 mb-6">Contacto con el departamento de expansión médica: <span data-vita-email-b2b class="font-mono text-vita-blue">asociados@clinicasvita.com</span></p>
 
                 <form id="form-b2b-adhesion" class="space-y-4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Nombre del Centro o Clínica *</label>
-                            <input type="text" name="nombre_centro" required placeholder="Ej. Policlínica San Mateo" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre de la Clínica o Centro *</label>
+                            <input type="text" name="nombre_centro" required placeholder="Ej. Policlínica San Mateo" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm bg-white">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Persona de Contacto *</label>
-                            <input type="text" name="contacto_nombre" required placeholder="Dr. / Dña. Elena Ramos" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Persona de Contacto *</label>
+                            <input type="text" name="contacto_nombre" required placeholder="Dr. / Dña. Nombre y Apellidos" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm bg-white">
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Teléfono Directo *</label>
-                            <input type="tel" name="contacto_telefono" required placeholder="954 000 000" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Teléfono Directo *</label>
+                            <input type="tel" name="contacto_telefono" required placeholder="954 000 000" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm bg-white">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Email Profesional *</label>
-                            <input type="email" name="contacto_email" required placeholder="direccion@tuclinica.com" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Email Profesional *</label>
+                            <input type="email" name="contacto_email" required placeholder="clinica@ejemplo.com" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm bg-white">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Provincia *</label>
-                            <input type="text" name="centro_provincia" required placeholder="Ej. Sevilla / Málaga" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Provincia *</label>
+                            <input type="text" name="centro_provincia" required placeholder="Ej. Sevilla / Málaga" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm bg-white">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Especialidades del Centro</label>
-                        <select name="centro_especialidad" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm">
-                            <option value="Fisioterapia y Rehabilitación">Fisioterapia y Rehabilitación</option>
-                            <option value="Policlínica Integral">Policlínica Integral con Traumatología</option>
-                            <option value="Diagnóstico por Imagen">Centro de Diagnóstico por Imagen (RMN / TAC)</option>
-                            <option value="Cuadro Traumatológico">Especialista Traumatólogo / Perito Médico</option>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Especialidades del Centro</label>
+                        <select name="centro_especialidad" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-vita-blue text-sm bg-white">
+                            <option value="Fisioterapia y Rehabilitación">Fisioterapia y Rehabilitación Motora</option>
+                            <option value="Policlínica con Traumatología">Policlínica con Traumatología</option>
+                            <option value="Centro de Diagnóstico por Imagen">Centro de Diagnóstico por Imagen (RMN / TAC)</option>
+                            <option value="Especialista Traumatólogo">Especialista Traumatólogo / Médico Evaluador</option>
                         </select>
                     </div>
 
-                    <button type="submit" class="w-full py-4 px-6 rounded-xl bg-vita-blue hover:bg-vita-blue-dark text-white font-bold text-sm shadow-lg transition-all flex items-center justify-center gap-2">
-                        <span>Enviar Solicitud de Incorporación a la Red</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                    <button type="submit" class="w-full py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-sm transition-all">
+                        Enviar Solicitud de Adhesión a la Red
                     </button>
 
-                    <div id="b2b-success-feedback" class="hidden p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-500 text-emerald-200 text-xs font-medium">
-                        ✓ <strong>Solicitud de centro recibida.</strong> El departamento de expansión de Clínicas Vita revisará las instalaciones de su centro y contactará con su dirección médica.
+                    <div id="b2b-success-feedback" class="hidden p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs">
+                        ✓ <strong>Solicitud de centro recibida.</strong> Nuestro equipo de expansión se pondrá en contacto con la dirección médica de su centro.
                     </div>
                 </form>
             </div>
-
         </div>
     </section>
 
-    <!-- FOOTER INSTITUCIONAL VITA (PALETA CORPORATIVA NAVY) -->
-    <footer class="bg-vita-navy-dark text-slate-400 py-16 border-t border-slate-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <!-- FOOTER INSTITUCIONAL (SOBRIO, LIMPIO Y ESTRUCTURADO) -->
+    <footer class="bg-vita-surface-alt border-t border-vita-border py-12 text-slate-600 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- COLUMNA 1: MARCA -->
             <div>
-                <img src="assets/img/brand/logo-horizontal-white.svg" alt="Clínicas Vita" class="h-10 w-auto mb-4">
-                <p class="text-xs leading-relaxed text-slate-400">
-                    Red nacional de coordinación asistencial y atención médica integral para lesionados de tráfico. Fisioterapia avanzada, traumatología y diagnóstico de precisión en toda España.
+                <img src="assets/img/brand/logo-horizontal.svg" alt="Clínicas Vita" class="h-9 w-auto mb-3">
+                <p class="text-slate-500 leading-relaxed">
+                    Red de coordinación médica especializada en la atención integral y rehabilitación de lesionados de tráfico en toda España.
                 </p>
-                <div class="mt-4 flex items-center gap-2 text-xs text-slate-400">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    <span>Libre elección de clínica médica</span>
-                </div>
+                <p class="mt-3 text-slate-400">Libre elección de clínica médica sin adelantar dinero.</p>
             </div>
 
-            <!-- COLUMNA 2: ASISTENCIA A LESIONADOS (B2C) -->
+            <!-- COLUMNA 2: ATENCIÓN AL LESIONADO -->
             <div>
-                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Asistencia al Lesionado</h4>
-                <ul class="space-y-2.5 text-xs">
-                    <li><a href="#lesionados" class="hover:text-white transition-colors">Atención Médica tras Accidente</a></li>
-                    <li><a href="#rehabilitacion" class="hover:text-white transition-colors">Tratamiento de Latigazo Cervical</a></li>
-                    <li><a href="#rehabilitacion" class="hover:text-white transition-colors">Fisioterapia y Readaptación</a></li>
-                    <li><a href="#pruebas" class="hover:text-white transition-colors">Resonancias y TACs de Urgencia</a></li>
-                    <li><a href="#contacto" class="hover:text-white transition-colors">Guía del Plazo de 72 Horas</a></li>
+                <h4 class="font-bold text-slate-900 mb-3 uppercase tracking-wider text-[11px]">Asistencia al Lesionado</h4>
+                <ul class="space-y-2">
+                    <li><a href="#lesionados" class="hover:text-vita-blue transition-colors">Atención Médica tras Accidente</a></li>
+                    <li><a href="#especialidades" class="hover:text-vita-blue transition-colors">Tratamiento del Latigazo Cervical</a></li>
+                    <li><a href="#especialidades" class="hover:text-vita-blue transition-colors">Fisioterapia y Readaptación</a></li>
+                    <li><a href="#especialidades" class="hover:text-vita-blue transition-colors">Resonancias Magnéticas Urgentes</a></li>
+                    <li><a href="#proceso" class="hover:text-vita-blue transition-colors">Protocolo de las 72 Horas</a></li>
                 </ul>
             </div>
 
-            <!-- COLUMNA 3: RED MÉDICA VITA (B2B) -->
+            <!-- COLUMNA 3: RED MÉDICA VITA -->
             <div>
-                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Red Médica & Profesionales</h4>
-                <ul class="space-y-2.5 text-xs">
-                    <li><a href="#red-medica" class="hover:text-white transition-colors">Adhesión de Centros Sanitarios</a></li>
-                    <li><a href="#red-medica" class="hover:text-white transition-colors font-semibold text-vita-blue-light">Plan de Expansión Red Sur</a></li>
-                    <li><a href="#red-medica" class="hover:text-white transition-colors">Clínicas de Fisioterapia Asociadas</a></li>
-                    <li><a href="#red-medica" class="hover:text-white transition-colors">Centros de Diagnóstico por Imagen</a></li>
-                    <li><a href="mailto:asociados@clinicasvita.com" data-vita-email-b2b class="hover:text-white transition-colors font-mono">asociados@clinicasvita.com</a></li>
+                <h4 class="font-bold text-slate-900 mb-3 uppercase tracking-wider text-[11px]">Red Médica & Clínicas</h4>
+                <ul class="space-y-2">
+                    <li><a href="#red-medica" class="hover:text-vita-blue transition-colors">Adhesión de Centros Médicos</a></li>
+                    <li><a href="#red-medica" class="hover:text-vita-blue transition-colors font-medium text-vita-blue">Plan Preferente Red Sur</a></li>
+                    <li><a href="#red-medica" class="hover:text-vita-blue transition-colors">Centros de Diagnóstico por Imagen</a></li>
+                    <li><a href="mailto:asociados@clinicasvita.com" data-vita-email-b2b class="hover:text-vita-blue transition-colors font-mono">asociados@clinicasvita.com</a></li>
                 </ul>
             </div>
 
-            <!-- COLUMNA 4: CONTACTO CENTRALIZADO -->
+            <!-- COLUMNA 4: CONTACTO -->
             <div>
-                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Contacto Asistencial</h4>
-                <div class="space-y-2.5 text-xs">
-                    <p class="text-slate-300">Coordinación médica 24/7 en las 52 provincias de España.</p>
-                    <div class="pt-1">
-                        <span class="block text-[10px] text-slate-400 uppercase font-bold">Atención General & Pacientes:</span>
-                        <a href="mailto:info@clinicasvita.com" data-vita-email-b2c class="text-vita-blue-light hover:underline font-mono">info@clinicasvita.com</a>
-                    </div>
-                    <div>
-                        <span class="block text-[10px] text-slate-400 uppercase font-bold">Adhesión de Centros Médicos:</span>
-                        <a href="mailto:asociados@clinicasvita.com" data-vita-email-b2b class="text-emerald-400 hover:underline font-mono">asociados@clinicasvita.com</a>
-                    </div>
-                    <div class="pt-2">
-                        <a href="#contacto" data-vita-phone-link class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 text-white font-medium hover:bg-slate-700 transition-colors">
+                <h4 class="font-bold text-slate-900 mb-3 uppercase tracking-wider text-[11px]">Contacto Asistencial</h4>
+                <ul class="space-y-2">
+                    <li><span>Consultas y Pacientes:</span> <a href="mailto:info@clinicasvita.com" data-vita-email-b2c class="text-vita-blue hover:underline font-mono">info@clinicasvita.com</a></li>
+                    <li><span>Centros y Especialistas:</span> <a href="mailto:asociados@clinicasvita.com" data-vita-email-b2b class="text-vita-blue hover:underline font-mono">asociados@clinicasvita.com</a></li>
+                    <li class="pt-2">
+                        <a href="#contacto" data-vita-phone-link class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 hover:border-vita-blue hover:text-vita-blue transition-all">
                             <svg class="w-3.5 h-3.5 text-vita-blue" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"></path></svg>
-                            <span data-vita-phone data-vita-fallback="Solicitar Asistencia Telefónica"></span>
+                            <span data-vita-phone data-vita-fallback="Línea Médica Directa"></span>
                         </a>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <!-- COPYRIGHT Y LEGAL -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-slate-800 text-xs flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-400 text-[11px]">
             <div>© 2026 Clínicas Vita (`clinicasvita.com`). Todos los derechos reservados.</div>
             <div class="flex gap-4">
-                <a href="#" class="hover:text-slate-300">Aviso Legal</a>
-                <a href="#" class="hover:text-slate-300">Política de Privacidad</a>
-                <a href="#" class="hover:text-slate-300">Política de Cookies</a>
-                <a href="#red-medica" class="text-slate-400 hover:text-white">Centros Asociados</a>
+                <a href="#" class="hover:text-slate-600">Aviso Legal</a>
+                <a href="#" class="hover:text-slate-600">Privacidad</a>
+                <a href="#" class="hover:text-slate-600">Cookies</a>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPTS CORE: CONFIGURACIÓN CENTRALIZADA Y MOTOR DE LEADS -->
+    <!-- SCRIPTS CORE -->
     <script src="js/config.js"></script>
     <script src="js/main.js"></script>
 
