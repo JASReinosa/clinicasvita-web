@@ -11,7 +11,7 @@ function pushToDataLayer(eventData) {
 
 // Envío a Google Sheets / Webhook de Clínicas Vita
 window.sendLeadToVitaWebhook = function(payload) {
-    const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycb.../exec"; // Webhook Apps Script
+    const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwd0DwRxRZyBDscTHTj2iOX416g8ZTbZ5oztSfCjqN4Qy13EPedHLMgG90pYcpRaRpD/exec";
     
     try {
         const safePayload = {
