@@ -60,24 +60,10 @@ window.applyVitaConfig = function() {
         }
     });
 
-    // 3. Enlaces de WhatsApp
+    // 3. Enlaces de WhatsApp (Gestionados por el modal con selector de provincia en main.js)
     document.querySelectorAll('[data-vita-whatsapp-link]').forEach(el => {
-        if (cfg.whatsapp && cfg.whatsapp.trim() !== "") {
-            const msg = encodeURIComponent(cfg.whatsappDefaultMsg);
-            el.setAttribute('href', `https://wa.me/${cfg.whatsapp.trim()}?text=${msg}`);
-            el.setAttribute('target', '_blank');
-            el.setAttribute('rel', 'noopener noreferrer');
-        } else {
-            el.setAttribute('href', '#contacto');
-            el.addEventListener('click', (e) => {
-                const target = document.querySelector('#contacto');
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    const input = target.querySelector('input[name="telefono"]') || target.querySelector('input');
-                    if (input) input.focus();
-                }
-            });
-        }
+        el.setAttribute('href', '#whatsapp');
+        el.setAttribute('role', 'button');
     });
 
     // 4. Email B2C (Lesionados / General)
