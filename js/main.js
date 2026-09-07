@@ -91,7 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     feedback.classList.remove('hidden');
                     feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 } else {
-                    alert("Solicitud recibida. Nuestro equipo de coordinación médica te contactará en breve.");
+                    const toast = document.createElement('div');
+                    toast.className = 'fixed bottom-6 right-6 z-50 bg-vita-navy text-white px-6 py-4 rounded-xl shadow-xl border border-vita-blue flex items-center gap-3 transition-all duration-300';
+                    toast.innerHTML = `<span class="w-3 h-3 rounded-full bg-emerald-400"></span><span>Solicitud recibida. Nuestro equipo de coordinación médica te contactará en breve.</span>`;
+                    document.body.appendChild(toast);
+                    setTimeout(() => toast.remove(), 6000);
                 }
             }, 600);
         });
@@ -134,7 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     feedback.classList.remove('hidden');
                     feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 } else {
-                    alert("Solicitud de adhesión enviada correctamente. El departamento de expansión médica contactará con su centro.");
+                    const toast = document.createElement('div');
+                    toast.className = 'fixed bottom-6 right-6 z-50 bg-vita-navy text-white px-6 py-4 rounded-xl shadow-xl border border-vita-blue flex items-center gap-3 transition-all duration-300';
+                    toast.innerHTML = `<span class="w-3 h-3 rounded-full bg-emerald-400"></span><span>Solicitud de adhesión enviada. El departamento de expansión médica contactará con su centro.</span>`;
+                    document.body.appendChild(toast);
+                    setTimeout(() => toast.remove(), 6000);
                 }
             }, 600);
         });

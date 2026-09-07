@@ -52,9 +52,9 @@ Este archivo define la identidad, el rol, los objetivos estratégicos y las rest
 > * **PURGA DE LINKS EN NOTICIAS EXTERNAS:** Al procesar información legal/médica, el agente y los scripts deben extraer únicamente la información y **filtrar/eliminar automáticamente cualquier enlace o mención a portales o clínicas de la competencia**. Todo enlace saliente hacia competidores queda ESTRICTAMENTE PROHIBIDO.
 
 > [!IMPORTANT]
-> **Regla Crítica de Redacción Médica/Legal:**
-> * **PROHIBICIÓN ESTRICTA DE MENCIONAR "CONVENIO" O "CONSORCIO":** Queda estrictamente prohibido utilizar las palabras "convenio", "Convenio UNESPA", "Convenio de Asistencia" o "Consorcio de Compensación" en los textos legibles de cara al usuario.
-> * El servicio se basa en la **libre elección de centro médico** y la **cobertura de asistencia sanitaria de la póliza de seguros**, y se define siempre bajo la fórmula: **"sin coste para el lesionado"** o **"sin adelantar dinero"**.
+> **Regla Crítica de Redacción Médica/Legal (Uso de "Convenio" / "UNESPA"):**
+> * Se permite y recomienda mencionar términos como "convenio" o "centros de convenio UNESPA" **única y exclusivamente para explicar con claridad pedagógica que el lesionado NO tiene la obligación de acudir a un hospital o centro asignado por la aseguradora bajo convenio**, y que **SÍ tiene el derecho legal a la libre elección de centro médico** para tratarse en la Clínica Vita más cercana o de mejor atención a sus intereses, sin coste alguno y sin adelantar dinero.
+> * El servicio se fundamenta siempre en la **libre elección de centro médico** y la **cobertura de asistencia sanitaria de la póliza de seguros**, bajo la fórmula: **"sin coste para el lesionado"** o **"sin adelantar dinero"**.
 
 > [!CAUTION]
 > **Prohibición Estricta de Alucinación y Exigencia de Datos Reales Contrastables:**

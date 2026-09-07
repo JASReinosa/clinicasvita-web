@@ -25,34 +25,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS con Sistema Material Design Clínico -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              vita: {
-                blue: '#0050E7',
-                'blue-hover': '#003DB3',
-                'blue-surface': '#F0F5FF',
-                navy: '#0A1931',
-                slate: '#1E293B',
-                muted: '#64748B',
-                green: '#25D366',
-                surface: '#FFFFFF',
-                'surface-alt': '#F8FAFC',
-                border: '#E2E8F0'
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-              mono: ['Fira Code', 'monospace']
-            }
-          }
-        }
-      }
-    </script>
+    <!-- Estilos Compilados Tailwind (Sin CDN para máxima velocidad y estabilidad WPO) -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
 </head>
 <body class="bg-vita-surface font-sans text-slate-800 antialiased selection:bg-vita-blue selection:text-white">
 
@@ -88,11 +62,10 @@
 
             <!-- NAVEGACIÓN CLÍNICA (Equilibrada y sobria) -->
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#lesionados" class="hover:text-vita-blue transition-colors">Atención al Lesionado</a>
-                <a href="#proceso" class="hover:text-vita-blue transition-colors">Proceso Médico</a>
-                <a href="#especialidades" class="hover:text-vita-blue transition-colors">Fisioterapia & Traumatología</a>
-                <a href="#valores" class="hover:text-vita-blue transition-colors">Compromiso Vita</a>
-                <a href="#red-medica" class="text-vita-blue font-semibold hover:text-vita-blue-hover transition-colors flex items-center gap-1.5">
+                <a href="./lesionados-accidente/" class="hover:text-vita-blue transition-colors">Atención al Lesionado</a>
+                <a href="./rehabilitacion-fisioterapia/" class="hover:text-vita-blue transition-colors">Fisioterapia</a>
+                <a href="./traumatologia-pruebas/" class="hover:text-vita-blue transition-colors">Traumatología & Pruebas</a>
+                <a href="./unirse-red-medica/" class="text-vita-blue font-semibold hover:text-vita-blue-hover transition-colors flex items-center gap-1.5">
                     <span>Área Centros Médicos</span>
                     <span class="text-[10px] bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded border border-slate-200">Red Sur</span>
                 </a>
@@ -459,11 +432,11 @@
             <div>
                 <h4 class="font-bold text-slate-900 mb-3 uppercase tracking-wider text-[11px]">Asistencia al Lesionado</h4>
                 <ul class="space-y-2">
-                    <li><a href="#lesionados" class="hover:text-vita-blue transition-colors">Atención Médica tras Accidente</a></li>
-                    <li><a href="#especialidades" class="hover:text-vita-blue transition-colors">Tratamiento del Latigazo Cervical</a></li>
-                    <li><a href="#especialidades" class="hover:text-vita-blue transition-colors">Fisioterapia y Readaptación</a></li>
-                    <li><a href="#especialidades" class="hover:text-vita-blue transition-colors">Resonancias Magnéticas Urgentes</a></li>
-                    <li><a href="#proceso" class="hover:text-vita-blue transition-colors">Protocolo de las 72 Horas</a></li>
+                    <li><a href="./lesionados-accidente/" class="hover:text-vita-blue transition-colors">Atención Médica tras Accidente</a></li>
+                    <li><a href="./rehabilitacion-fisioterapia/" class="hover:text-vita-blue transition-colors">Tratamiento del Latigazo Cervical</a></li>
+                    <li><a href="./rehabilitacion-fisioterapia/" class="hover:text-vita-blue transition-colors">Fisioterapia y Readaptación</a></li>
+                    <li><a href="./traumatologia-pruebas/" class="hover:text-vita-blue transition-colors">Resonancias Magnéticas Urgentes</a></li>
+                    <li><a href="./lesionados-accidente/#protocolo-72h" class="hover:text-vita-blue transition-colors">Protocolo de las 72 Horas</a></li>
                 </ul>
             </div>
 
@@ -471,9 +444,9 @@
             <div>
                 <h4 class="font-bold text-slate-900 mb-3 uppercase tracking-wider text-[11px]">Red Médica & Clínicas</h4>
                 <ul class="space-y-2">
-                    <li><a href="#red-medica" class="hover:text-vita-blue transition-colors">Adhesión de Centros Médicos</a></li>
-                    <li><a href="#red-medica" class="hover:text-vita-blue transition-colors font-medium text-vita-blue">Plan Preferente Red Sur</a></li>
-                    <li><a href="#red-medica" class="hover:text-vita-blue transition-colors">Centros de Diagnóstico por Imagen</a></li>
+                    <li><a href="./unirse-red-medica/" class="hover:text-vita-blue transition-colors">Adhesión de Centros Médicos</a></li>
+                    <li><a href="./unirse-red-medica/#plan-sur" class="hover:text-vita-blue transition-colors font-medium text-vita-blue">Plan Preferente Red Sur</a></li>
+                    <li><a href="./traumatologia-pruebas/" class="hover:text-vita-blue transition-colors">Centros de Diagnóstico por Imagen</a></li>
                     <li><a href="mailto:asociados@clinicasvita.com" data-vita-email-b2b class="hover:text-vita-blue transition-colors font-mono">asociados@clinicasvita.com</a></li>
                 </ul>
             </div>
