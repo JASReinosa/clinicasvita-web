@@ -147,6 +147,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 600);
         });
     }
+
+    // 3. Normalizador automático para previsualización local (file://)
+    // Evita que el navegador abra el índice de carpetas al pinchar en logos o migas de pan
+    if (window.location.protocol === 'file:') {
+        document.querySelectorAll('a[href]').forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:')) return;
+            if (href === '../' || href === './' || href === '/') {
+                link.setAttribute('href', `${href}index.html`);
+            } else if (href.endsWith('/')) {
+                link.setAttribute('href', `${href}index.html`);
+            }
+        });
+    }
 });
 
 console.log("Clínicas Vita Core initialized (Config & Forms ready).");

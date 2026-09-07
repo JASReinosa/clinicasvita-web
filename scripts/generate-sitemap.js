@@ -8,7 +8,7 @@ const SITEMAP_PATH = path.join(ROOT_DIR, 'sitemap.xml');
 function getHtmlFiles(dir, fileList = []) {
     const files = fs.readdirSync(dir);
     for (const file of files) {
-        if (['node_modules', '.git', '.clasp.json', 'assets'].includes(file)) continue;
+        if (['node_modules', '.git', '.clasp.json', 'assets', 'docs', '_docs', 'gas', 'scripts'].includes(file)) continue;
         const filePath = path.join(dir, file);
         const stat = fs.statSync(filePath);
         if (stat.isDirectory()) {
