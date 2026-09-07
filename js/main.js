@@ -4,6 +4,43 @@
  */
 
 window.dataLayer = window.dataLayer || [];
+function gtag(){ window.dataLayer.push(arguments); }
+window.gtag = window.gtag || gtag;
+
+// 1. Google Consent Mode v2 (Defaults según AEPD y estándares GA4 Tier 1)
+(function initGCMDefaults() {
+    const CONSENT_KEY = 'vita_cookie_consent';
+    const saved = localStorage.getItem(CONSENT_KEY) || sessionStorage.getItem(CONSENT_KEY);
+    const defaults = {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted'
+    };
+    if (saved) {
+        try {
+            const parsed = JSON.parse(saved);
+            if (parsed.analytics) defaults.analytics_storage = 'granted';
+            if (parsed.marketing) {
+                defaults.ad_storage = 'granted';
+                defaults.ad_user_data = 'granted';
+                defaults.ad_personalization = 'granted';
+            }
+            if (parsed.personalization) defaults.personalization_storage = 'granted';
+        } catch(e) {
+            if (saved === 'accepted') {
+                defaults.analytics_storage = 'granted';
+                defaults.ad_storage = 'granted';
+                defaults.ad_user_data = 'granted';
+                defaults.ad_personalization = 'granted';
+            }
+        }
+    }
+    gtag('consent', 'default', defaults);
+})();
 
 function pushToDataLayer(eventData) {
     window.dataLayer.push(eventData);
@@ -322,60 +359,294 @@ function initVitaWhatsAppModal() {
 }
 
 /**
- * Gestor del Banner de Consentimiento de Cookies (AEPD Compliant)
+ * Gestor del Banner de Consentimiento de Cookies & Google Consent Mode v2 (Tier 1 Internacional)
  */
 function initVitaCookieBanner() {
     const CONSENT_KEY = 'vita_cookie_consent';
-    const currentConsent = localStorage.getItem(CONSENT_KEY);
+    const savedConsent = localStorage.getItem(CONSENT_KEY) || sessionStorage.getItem(CONSENT_KEY);
 
-    const bannerHtml = `
-    <div id="vita-cookie-banner" class="${currentConsent ? 'hidden' : ''} fixed bottom-0 inset-x-0 z-50 p-4 sm:p-6 bg-vita-navy/95 backdrop-blur-md text-white border-t border-slate-700 shadow-2xl">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div class="max-w-3xl text-xs text-slate-300 leading-relaxed">
-                <p>
-                    Utilizamos cookies técnicas necesarias y almacenamiento local (como la memorización de tu provincia) para coordinar tu asistencia médica con los centros de la Red Vita más cercanos. Conforme a las directrices de la AEPD, puedes aceptar todas las cookies, rechazar las no esenciales o consultar los detalles en nuestra <a href="../politica-cookies/" class="text-white underline hover:text-blue-300 font-medium">Política de Cookies</a>.
+    // Helpers para rutas de políticas relativas/absolutas seguras
+    function getPolicyUrl(path) {
+        if (window.location.protocol === 'file:') {
+            const current = window.location.pathname;
+            if (current.includes('/previews/')) {
+                return `../../${path}/index.html`;
+            } else if (current.includes('/lesionados-accidente/') || current.includes('/contacto/') || current.includes('/politica-') || current.includes('/rehabilitacion-') || current.includes('/traumatologia-') || current.includes('/unirse-')) {
+                return `../${path}/index.html`;
+            }
+            return `./${path}/index.html`;
+        }
+        return `/${path}/`;
+    }
+
+    const privacyUrl = getPolicyUrl('politica-privacidad');
+    const cookiesUrl = getPolicyUrl('politica-cookies');
+
+    // Función de actualización de Consent Mode v2
+    window.updateVitaGCM = function(analytics, marketing, personalization) {
+        const consentObj = {
+            analytics: !!analytics,
+            marketing: !!marketing,
+            personalization: !!personalization
+        };
+        const allAccepted = analytics && marketing && personalization;
+
+        if (allAccepted) {
+            localStorage.setItem(CONSENT_KEY, JSON.stringify(consentObj));
+            sessionStorage.removeItem(CONSENT_KEY);
+        } else {
+            sessionStorage.setItem(CONSENT_KEY, JSON.stringify(consentObj));
+            localStorage.removeItem(CONSENT_KEY);
+        }
+
+        window.gtag('consent', 'update', {
+            'ad_storage': marketing ? 'granted' : 'denied',
+            'ad_user_data': marketing ? 'granted' : 'denied',
+            'ad_personalization': marketing ? 'granted' : 'denied',
+            'analytics_storage': analytics ? 'granted' : 'denied',
+            'personalization_storage': personalization ? 'granted' : 'denied'
+        });
+
+        window.dataLayer.push({
+            'event': 'consent_updated',
+            'consent_state': consentObj
+        });
+
+        window.dispatchEvent(new CustomEvent('vitaCookieConsentChanged', { detail: consentObj }));
+    };
+
+    function hideBanner() {
+        const banner = document.getElementById('vita-cookie-banner');
+        const backdrop = document.getElementById('vita-cookie-backdrop');
+        if (banner) {
+            banner.classList.remove('opacity-100', 'translate-y-0');
+            banner.classList.add('opacity-0', 'translate-y-8');
+            setTimeout(() => banner.remove(), 350);
+        }
+        if (backdrop) {
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            setTimeout(() => backdrop.remove(), 350);
+        }
+    }
+
+    function showBanner() {
+        if (document.getElementById('vita-cookie-banner')) return;
+
+        // Backdrop oscuro y blur
+        const backdrop = document.createElement('div');
+        backdrop.id = 'vita-cookie-backdrop';
+        backdrop.className = 'fixed inset-0 z-[9998] bg-slate-900/60 backdrop-blur-[3px] transition-opacity duration-300 opacity-0 pointer-events-auto';
+        document.body.appendChild(backdrop);
+
+        // Tarjeta flotante moderna centrada en desktop y anclada inferior en móvil
+        const banner = document.createElement('div');
+        banner.id = 'vita-cookie-banner';
+        banner.className = 'fixed bottom-4 left-4 right-4 md:left-1/2 md:top-1/2 md:bottom-auto md:right-auto md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-lg md:w-full z-[9999] bg-white text-slate-900 rounded-2xl sm:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.35)] border border-slate-200 p-6 sm:p-7 transition-all duration-300 transform translate-y-8 opacity-0 flex flex-col gap-4 font-sans';
+        banner.innerHTML = `
+            <div class="flex-1 space-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-blue-50 text-[#0057cc] flex items-center justify-center shrink-0 border border-blue-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">Tu privacidad nos importa</h3>
+                        <span class="text-[11px] text-slate-500 font-medium">Clínicas Vita · Gestión de Consentimiento Sanitario</span>
+                    </div>
+                </div>
+                <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">
+                    Utilizamos cookies técnicas y de almacenamiento local necesarias para coordinar tu asistencia médica con los centros de la Red Vita, además de analítica anónima para optimizar la respuesta asistencial y nuestras campañas de Google Ads. Puedes aceptar todas las cookies, rechazarlas o configurar tus preferencias. Más detalles en nuestra <a href="${cookiesUrl}" class="text-[#0057cc] hover:underline font-semibold">Política de Cookies</a> y <a href="${privacyUrl}" class="text-[#0057cc] hover:underline font-semibold">Política de Privacidad</a>.
                 </p>
             </div>
-            <div class="flex items-center gap-3 shrink-0 w-full md:w-auto">
-                <button id="vita-cookie-reject-btn" type="button" class="flex-1 md:flex-initial px-4 py-2.5 rounded-xl border border-slate-600 hover:bg-slate-800 text-slate-200 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400">
-                    Rechazar No Esenciales
+            <div class="flex flex-col gap-2.5 w-full pt-1">
+                <button id="vita-cookie-accept-btn" type="button" class="w-full bg-[#0057cc] hover:bg-[#0040a2] text-white text-xs sm:text-sm font-bold py-3.5 px-5 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-center active:scale-[0.98]">
+                    Aceptar todo
                 </button>
-                <button id="vita-cookie-accept-btn" type="button" class="flex-1 md:flex-initial px-5 py-2.5 rounded-xl bg-vita-blue hover:bg-vita-blue-hover text-white text-xs font-semibold transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-vita-blue">
-                    Aceptar Todas
-                </button>
+                <div class="grid grid-cols-2 gap-2.5">
+                    <button id="vita-cookie-reject-btn" type="button" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 text-xs font-bold py-2.5 px-4 rounded-xl transition-colors cursor-pointer text-center active:scale-[0.98]">
+                        Rechazar todo
+                    </button>
+                    <button id="vita-cookie-settings-btn" type="button" class="w-full bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 text-xs font-bold py-2.5 px-4 rounded-xl transition-colors cursor-pointer text-center active:scale-[0.98]">
+                        Configurar
+                    </button>
+                </div>
             </div>
-        </div>
-    </div>
-    `;
+        `;
 
-    document.body.insertAdjacentHTML('beforeend', bannerHtml);
+        document.body.appendChild(banner);
 
-    const banner = document.querySelector('#vita-cookie-banner');
-    const acceptBtn = document.querySelector('#vita-cookie-accept-btn');
-    const rejectBtn = document.querySelector('#vita-cookie-reject-btn');
+        requestAnimationFrame(() => {
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            banner.classList.remove('translate-y-8', 'opacity-0');
+            banner.classList.add('translate-y-0', 'opacity-100');
+        });
+
+        // Eventos
+        document.getElementById('vita-cookie-accept-btn').addEventListener('click', () => {
+            window.updateVitaGCM(true, true, true);
+            hideBanner();
+        });
+
+        document.getElementById('vita-cookie-reject-btn').addEventListener('click', () => {
+            window.updateVitaGCM(false, false, false);
+            hideBanner();
+        });
+
+        document.getElementById('vita-cookie-settings-btn').addEventListener('click', () => {
+            openCookieSettings();
+        });
+    }
+
+    // Modal de Configuración Detallada
+    function openCookieSettings() {
+        let modal = document.getElementById('vita-cookie-modal');
+        let consent = { analytics: false, marketing: false, personalization: false };
+        try {
+            const raw = localStorage.getItem(CONSENT_KEY) || sessionStorage.getItem(CONSENT_KEY);
+            if (raw) {
+                const parsed = JSON.parse(raw);
+                if (typeof parsed === 'object') consent = parsed;
+            }
+        } catch(e) {}
+
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'vita-cookie-modal';
+            modal.className = 'fixed inset-0 z-[10000] hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 transition-opacity duration-300';
+            modal.innerHTML = `
+                <div id="vita-cookie-modal-card" class="bg-white text-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative transform scale-95 opacity-0 transition-all duration-300 max-h-[90vh] overflow-y-auto font-sans border border-slate-200">
+                    <button id="vita-cookie-modal-close" type="button" class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors" aria-label="Cerrar modal">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 leading-tight">Preferencias de Privacidad</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Puedes activar o desactivar las diferentes categorías de cookies según tus preferencias. Las cookies técnicas son estrictamente necesarias para prestar el servicio asistencial.
+                    </p>
+
+                    <div class="space-y-4 my-6">
+                        <!-- Categoría 1: Técnicas -->
+                        <div class="flex items-start justify-between gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm font-bold text-slate-900">Técnicas y Asistenciales</span>
+                                    <span class="text-[10px] font-extrabold text-slate-600 bg-slate-200 px-2 py-0.5 rounded-full uppercase tracking-wider">Obligatorio</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                                    Permiten guardar tus decisiones de privacidad, recordar tu provincia para asignación médica y mantener la seguridad del portal. No se pueden desactivar.
+                                </p>
+                            </div>
+                            <div class="flex items-center h-5">
+                                <input type="checkbox" checked disabled class="h-4.5 w-4.5 rounded border-gray-300 text-[#0057cc] cursor-not-allowed"/>
+                            </div>
+                        </div>
+
+                        <!-- Categoría 2: Analítica -->
+                        <div class="flex items-start justify-between gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                            <div class="flex-1">
+                                <span class="text-sm font-bold text-slate-900">Análisis y Rendimiento (GA4)</span>
+                                <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                                    Métricas anónimas para medir la respuesta del sitio, páginas consultadas y optimizar los tiempos de derivación médica a clínicas.
+                                </p>
+                            </div>
+                            <div class="flex items-center h-5">
+                                <input type="checkbox" id="vita-consent-analytics" class="h-4.5 w-4.5 rounded border-gray-300 text-[#0057cc] focus:ring-[#0057cc] cursor-pointer"/>
+                            </div>
+                        </div>
+
+                        <!-- Categoría 3: Atribución y Ads -->
+                        <div class="flex items-start justify-between gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                            <div class="flex-1">
+                                <span class="text-sm font-bold text-slate-900">Publicidad y Atribución (Google Ads)</span>
+                                <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                                    Optimiza la atribución de campañas publicitarias para lesionados que buscan asistencia médica inmediata tras un accidente de tráfico.
+                                </p>
+                            </div>
+                            <div class="flex items-center h-5">
+                                <input type="checkbox" id="vita-consent-marketing" class="h-4.5 w-4.5 rounded border-gray-300 text-[#0057cc] focus:ring-[#0057cc] cursor-pointer"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                        <button id="vita-cookie-save-settings" type="button" class="flex-1 py-3 px-4 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold transition-colors cursor-pointer text-center">
+                            Guardar preferencias
+                        </button>
+                        <button id="vita-cookie-modal-accept-all" type="button" class="flex-1 py-3 px-4 rounded-xl bg-[#0057cc] hover:bg-[#0040a2] text-white text-xs font-bold transition-colors shadow-md cursor-pointer text-center">
+                            Aceptar todo
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            document.getElementById('vita-cookie-modal-close').addEventListener('click', () => {
+                closeModal();
+            });
+
+            document.getElementById('vita-cookie-save-settings').addEventListener('click', () => {
+                const analytics = document.getElementById('vita-consent-analytics').checked;
+                const marketing = document.getElementById('vita-consent-marketing').checked;
+                window.updateVitaGCM(analytics, marketing, false);
+                closeModal();
+                hideBanner();
+            });
+
+            document.getElementById('vita-cookie-modal-accept-all').addEventListener('click', () => {
+                window.updateVitaGCM(true, true, true);
+                closeModal();
+                hideBanner();
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
+
+        // Sincronizar estado checkboxes
+        const chkAnalytics = document.getElementById('vita-consent-analytics');
+        const chkMarketing = document.getElementById('vita-consent-marketing');
+        if (chkAnalytics) chkAnalytics.checked = !!consent.analytics;
+        if (chkMarketing) chkMarketing.checked = !!consent.marketing;
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        requestAnimationFrame(() => {
+            const card = document.getElementById('vita-cookie-modal-card');
+            if (card) {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            }
+        });
+
+        function closeModal() {
+            const card = document.getElementById('vita-cookie-modal-card');
+            if (card) {
+                card.classList.remove('scale-100', 'opacity-100');
+                card.classList.add('scale-95', 'opacity-0');
+            }
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 250);
+        }
+    }
+
+    window.openVitaCookieSettings = openCookieSettings;
+
+    // Enlace reactivo del botón `#btn-reabrir-cookies` en la página de política de cookies
     const reopenBtn = document.querySelector('#btn-reabrir-cookies');
-
-    if (acceptBtn) {
-        acceptBtn.addEventListener('click', () => {
-            localStorage.setItem(CONSENT_KEY, 'accepted');
-            window.dataLayer.push({ 'event': 'cookie_consent_accepted' });
-            banner.classList.add('hidden');
-        });
-    }
-
-    if (rejectBtn) {
-        rejectBtn.addEventListener('click', () => {
-            localStorage.setItem(CONSENT_KEY, 'rejected');
-            window.dataLayer.push({ 'event': 'cookie_consent_rejected' });
-            banner.classList.add('hidden');
-        });
-    }
-
     if (reopenBtn) {
-        reopenBtn.addEventListener('click', () => {
-            banner.classList.remove('hidden');
-            banner.scrollIntoView({ behavior: 'smooth' });
+        reopenBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openCookieSettings();
         });
+    }
+
+    // Inicializar visualización si no hay consentimiento registrado
+    if (!savedConsent) {
+        showBanner();
     }
 }
 
