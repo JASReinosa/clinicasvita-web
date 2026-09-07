@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /docs/
 Disallow: /scripts/
 Disallow: /gas/
+Disallow: /previews/
 Allow: /
 
 Sitemap: https://clinicasvita.com/sitemap.xml

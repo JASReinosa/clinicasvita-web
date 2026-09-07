@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta name="robots" content="noindex, nofollow"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clínicas Vita · Red Médica &amp; Triaje Digital Preferente</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-dim": "#d2d9f4",
+            "primary": "#000f22",
+            "on-background": "#131b2e",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#002a26",
+            "on-secondary-fixed-variant": "#0040a2",
+            "surface-container-low": "#f2f3ff",
+            "on-surface-variant": "#43474d",
+            "on-tertiary-fixed": "#00201d",
+            "tertiary-fixed": "#89f5e7",
+            "primary-container": "#0a2540",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#0453cd",
+            "on-primary-fixed-variant": "#314865",
+            "error-container": "#ffdad6",
+            "inverse-primary": "#b0c8eb",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "on-primary-container": "#768dad",
+            "on-primary": "#ffffff",
+            "secondary-container": "#356ee7",
+            "secondary-fixed": "#dae2ff",
+            "on-surface": "#131b2e",
+            "surface-container": "#eaedff",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-fixed": "#001848",
+            "primary-fixed": "#d2e4ff",
+            "on-primary-fixed": "#001c37",
+            "on-tertiary-fixed-variant": "#005049",
+            "surface": "#faf8ff",
+            "background": "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#eef0ff",
+            "on-error-container": "#93000a",
+            "tertiary": "#001210",
+            "on-secondary-container": "#fefcff",
+            "inverse-surface": "#283044",
+            "outline-variant": "#c4c6ce",
+            "secondary-fixed-dim": "#b2c5ff",
+            "surface-tint": "#49607e",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#b0c8eb",
+            "outline": "#74777e",
+            "on-tertiary-container": "#1f9c8f",
+            "surface-container-high": "#e2e7ff",
+            "surface-variant": "#dae2fd"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "unit-xs": "0.5rem",
+            "margin-desktop": "3rem",
+            "unit-2xl": "3rem",
+            "unit-sm": "0.75rem",
+            "gutter-tablet": "1.5rem",
+            "unit-2xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "unit-4xl": "6rem",
+            "unit-md": "1rem",
+            "unit-lg": "1.5rem",
+            "gutter-desktop": "2rem",
+            "unit-xl": "2rem",
+            "unit-3xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-tablet": "2rem"
+          },
+          fontFamily: {
+            "headline-md": ["Plus Jakarta Sans"],
+            "data-mono": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "display-md-mobile": ["Plus Jakarta Sans"],
+            "display-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "headline-md": ["1.25rem", { lineHeight: "1.35", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "data-mono": ["0.875rem", { lineHeight: "1.4", letterSpacing: "0", fontWeight: "500" }],
+            "headline-sm": ["1.125rem", { lineHeight: "1.4", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "display-lg": ["3rem", { lineHeight: "1.15", letterSpacing: "-0.025em", fontWeight: "700" }],
+            "body-lg": ["1.125rem", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+            "body-md": ["1rem", { lineHeight: "1.55", letterSpacing: "0", fontWeight: "400" }],
+            "body-sm": ["0.875rem", { lineHeight: "1.5", letterSpacing: "0.005em", fontWeight: "400" }],
+            "label-sm": ["0.75rem", { lineHeight: "1.35", letterSpacing: "0.02em", fontWeight: "600" }],
+            "label-md": ["0.875rem", { lineHeight: "1.4", letterSpacing: "0.01em", fontWeight: "600" }],
+            "display-md-mobile": ["1.75rem", { lineHeight: "1.25", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "display-md": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-lg": ["1.5rem", { lineHeight: "1.3", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "display-lg-mobile": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+
+<!-- CEO PROTOTYPE NAVIGATION BAR -->
+<div id="vita-prototype-bar" class="sticky top-0 z-[999] bg-slate-950/95 backdrop-blur-md border-b border-slate-800 text-white px-3 sm:px-4 py-2 transition-all shadow-lg font-sans">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2.5 text-xs">
+    <div class="flex items-center gap-2">
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold tracking-wide border border-amber-500/30 text-[11px]">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        PROTOTIPO · CEO REVIEW
+      </span>
+      <span class="text-slate-600 hidden sm:inline">|</span>
+      <span class="font-medium text-slate-200 hidden md:inline">Diseño: <strong class="text-white">HealthTech & Triaje Prioritario</strong></span>
+    </div>
+    <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+      <a href="../editorial/" class="px-2.5 py-1 rounded-md text-[11px] sm:text-xs transition-colors bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white">🏛️ 1. Editorial</a>
+      <a href="../healthtech/" class="px-2.5 py-1 rounded-md text-[11px] sm:text-xs transition-colors bg-amber-400 text-slate-950 font-bold shadow-sm">⚡ 2. HealthTech</a>
+      <a href="../humana/" class="px-2.5 py-1 rounded-md text-[11px] sm:text-xs transition-colors bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white">🤝 3. Humana</a>
+      <a href="../" class="px-2.5 py-1 rounded-md text-[11px] sm:text-xs bg-blue-600/30 text-blue-200 hover:bg-blue-600/60 transition-colors border border-blue-500/40 font-semibold">📊 Dossier Comparador</a>
+      <a href="../../" class="px-2.5 py-1 rounded-md text-[11px] sm:text-xs bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors" title="Ver versión actual en producción">🌐 MVP Actual</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER FIJO CON SELECTOR DINÁMICO DE ESTADO ASISTENCIAL -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_2px_12px_rgba(10,37,64,0.06)] border-b border-surface-container">
+<!-- Sub-barra regulatoria superior -->
+<div class="bg-primary text-on-primary py-unit-2xs px-gutter-mobile md:px-margin-desktop">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between text-label-sm font-label-sm">
+<div class="flex items-center gap-unit-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-container text-tertiary-fixed font-semibold tracking-wide uppercase text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-ping"></span>
+            Urgencia Sanitaria 24h · 52 Provincias
+          </span>
+<span class="hidden lg:inline text-on-primary/80">Convenio Sanitario Marco UNESPA/CAS · Cobertura Directa Aseguradora Sin Coste para el Paciente</span>
+</div>
+<div class="flex items-center gap-unit-lg">
+<a class="flex items-center gap-1.5 text-on-primary hover:text-tertiary-fixed transition-colors" href="tel:900800240">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span class="font-semibold">Línea Preferente: 900 800 240</span>
+</a>
+<span class="hidden sm:inline-flex items-center gap-1 text-on-primary/70">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Derecho Real Decreto 8/2004</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Barra de navegación principal y Selector de Estado -->
+<div class="max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop">
+<div class="h-20 flex items-center justify-between gap-unit-md">
+<!-- Logo -->
+<a class="flex items-center gap-3 group shrink-0" href="#">
+<div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shadow-md group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-tertiary-fixed text-[26px]">vital_signs</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-sm text-primary tracking-tight font-bold leading-tight">Clínicas Vita</span>
+<span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-semibold">HealthTech · Triaje Preferente</span>
+</div>
+</a>
+<!-- Selector de Estado Asistencial (Navegación Dinámica) -->
+<div class="hidden lg:flex items-center bg-surface-container-low p-1.5 rounded-xl border border-surface-container-high" role="tablist">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-label-md font-semibold bg-surface-container-lowest text-primary shadow-sm transition-all" id="tab-new" onclick="switchUserState('new')">
+<span class="material-symbols-outlined text-secondary text-[18px]">alarm_on</span>
+<span>Acabo de tener un accidente</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/10 text-secondary text-[10px] uppercase font-bold">&lt; 72h</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all" id="tab-switch" onclick="switchUserState('switch')">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>Estoy en rehabilitación y quiero cambiar</span>
+</button>
+</div>
+<!-- Acciones Rápidas -->
+<div class="flex items-center gap-unit-sm">
+<a class="hidden xl:inline-flex items-center gap-2 h-11 px-4 rounded-lg bg-[#075E54] text-on-primary font-label-md hover:bg-[#064E46] transition-colors shadow-sm" href="https://wa.me/34900800240" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp Triaje</span>
+</a>
+<a class="inline-flex items-center justify-center h-11 px-5 rounded-lg bg-secondary text-on-secondary font-label-md font-semibold hover:bg-on-secondary-fixed-variant transition-all shadow-md hover:shadow-lg" href="#triaje-directo">
+<span class="material-symbols-outlined mr-2 text-[18px]">ecg_heart</span>
+            Triaje Preferente
+          </a>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN VIEWPORT -->
+<main class="w-full pt-32 bg-surface">
+<!-- HERO: "HealthTech Ágil & Triaje Preferente" (Two Columns con Formulario Interactivo Directo) -->
+<section class="relative w-full max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop pt-unit-md pb-unit-2xl">
+<!-- Glow Decorator -->
+<div class="absolute -top-10 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-unit-xl items-start">
+<!-- Columna Izquierda: Propuesta de Valor, Badges y Ventana Crítica 72h -->
+<div class="lg:col-span-6 flex flex-col items-start space-y-unit-lg pt-unit-xs">
+<!-- Tag HealthTech -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container/10 border border-secondary-container/20 text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm tracking-wide uppercase font-bold text-[11px]">Plataforma Asistencial Sanitaria de Derivación Ágil</span>
+</div>
+<div class="space-y-unit-sm">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight leading-[1.08] font-bold">
+              Triaje digital preferente para <span class="text-secondary underline decoration-secondary/30 decoration-4">accidentes de tráfico</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              Active en 2 minutos su asignación facultativa en centros concertados. Traumatología especializada, resonancia magnética RMN en menos de 48h y fisioterapia individualizada <strong class="text-primary font-semibold">100% cubierta por el seguro obligatorio del siniestro</strong>.
+            </p>
+</div>
+<!-- Badges de Certificación y Tiempos de Respuesta -->
+<div class="grid grid-cols-3 gap-unit-sm w-full py-unit-xs">
+<div class="p-unit-sm rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span class="font-label-sm text-[10px] font-bold text-secondary bg-secondary-fixed px-1.5 py-0.5 rounded">MÁX</span>
+</div>
+<span class="font-display-md text-headline-lg font-bold text-primary">72h</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Ventana de cobertura legal médica</span>
+</div>
+<div class="p-unit-sm rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">radiology</span>
+<span class="font-label-sm text-[10px] font-bold text-tertiary-container bg-tertiary-fixed px-1.5 py-0.5 rounded">RMN</span>
+</div>
+<span class="font-display-md text-headline-lg font-bold text-secondary">&lt;48h</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Cita para resonancia magnética</span>
+</div>
+<div class="p-unit-sm rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="font-label-sm text-[10px] font-bold text-primary bg-surface-container-high px-1.5 py-0.5 rounded">CAS</span>
+</div>
+<span class="font-display-md text-headline-lg font-bold text-primary">0€</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">Sin copagos ni desembolso previo</span>
+</div>
+</div>
+<!-- Banner Informativo del Estado Dinámico -->
+<div class="w-full p-unit-md rounded-xl bg-surface-container-high/70 border border-surface-container flex items-start gap-3" id="dynamic-state-banner">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">info</span>
+<div>
+<p class="font-headline-sm text-label-md font-bold text-primary" id="state-title">Protocolo Activo: Nuevo Accidente</p>
+<p class="font-body-sm text-[13px] text-on-surface-variant" id="state-desc">
+                Si su siniestro ocurrió en las últimas 72 horas, tiene derecho a consulta traumatológica y pruebas diagnósticas urgentes sin autorización previa de su compañía.
+              </p>
+</div>
+</div>
+<!-- Enlaces de confianza jurídica -->
+<div class="flex flex-wrap items-center gap-unit-md text-label-sm text-on-surface-variant pt-1">
+<span class="inline-flex items-center gap-1.5 text-primary font-medium">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+              Convenio Asistencia Sanitaria Unificada
+            </span>
+<span class="inline-flex items-center gap-1.5 text-primary font-medium">
+<span class="material-symbols-outlined text-secondary text-[16px]">shield_person</span>
+              Libre Elección Garantizada por Ley
+            </span>
+</div>
+</div>
+<!-- Columna Derecha: Triaje Digital Instantáneo en Primer Término -->
+<div class="lg:col-span-6 w-full" id="triaje-directo">
+<div class="bg-surface-container-lowest rounded-2xl border-2 border-secondary/20 shadow-xl p-unit-lg md:p-unit-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 left-0 h-1.5 bg-gradient-to-r from-secondary via-secondary-container to-tertiary-fixed"></div>
+<div class="flex items-center justify-between pb-unit-sm border-b border-surface-container mb-unit-md">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Triaje Inmediato de Derivación</span>
+</div>
+<span class="font-data-mono text-[11px] font-semibold text-secondary bg-surface-container px-2.5 py-1 rounded-full">
+                PASO 1 DE 2 · ASIGNACIÓN DIRECTA
+              </span>
+</div>
+<form class="space-y-unit-md" id="hero-instant-triage" onsubmit="event.preventDefault(); processInstantTriage();">
+<!-- Selector Anatómico Visual -->
+<div>
+<label class="font-label-md text-primary font-bold flex items-center justify-between mb-2">
+<span>¿Dónde se localiza el foco principal del dolor o impacto?</span>
+<span class="text-secondary font-normal text-label-sm">Seleccione foco</span>
+</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<!-- Cervical -->
+<label class="relative flex flex-col items-center text-center p-3 rounded-xl border border-surface-container bg-surface-container-low hover:border-secondary cursor-pointer transition-all has-[:checked]:border-secondary has-[:checked]:bg-primary has-[:checked]:text-on-primary group">
+<input checked="" class="sr-only" name="hero_zone" type="radio" value="cervical"/>
+<span class="material-symbols-outlined text-[24px] text-secondary group-has-[:checked]:text-tertiary-fixed mb-1">person</span>
+<span class="font-label-sm text-[12px] font-bold block">Cervicalgia</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant group-has-[:checked]:text-on-primary/80">Latigazo / Cuello</span>
+</label>
+<!-- Lumbar -->
+<label class="relative flex flex-col items-center text-center p-3 rounded-xl border border-surface-container bg-surface-container-low hover:border-secondary cursor-pointer transition-all has-[:checked]:border-secondary has-[:checked]:bg-primary has-[:checked]:text-on-primary group">
+<input class="sr-only" name="hero_zone" type="radio" value="lumbar"/>
+<span class="material-symbols-outlined text-[24px] text-secondary group-has-[:checked]:text-tertiary-fixed mb-1">accessibility_new</span>
+<span class="font-label-sm text-[12px] font-bold block">Lumbalgia</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant group-has-[:checked]:text-on-primary/80">Dorsal / Espalda</span>
+</label>
+<!-- Extremidades -->
+<label class="relative flex flex-col items-center text-center p-3 rounded-xl border border-surface-container bg-surface-container-low hover:border-secondary cursor-pointer transition-all has-[:checked]:border-secondary has-[:checked]:bg-primary has-[:checked]:text-on-primary group">
+<input class="sr-only" name="hero_zone" type="radio" value="articulaciones"/>
+<span class="material-symbols-outlined text-[24px] text-secondary group-has-[:checked]:text-tertiary-fixed mb-1">orthopedics</span>
+<span class="font-label-sm text-[12px] font-bold block">Articular</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant group-has-[:checked]:text-on-primary/80">Hombro / Rodilla</span>
+</label>
+<!-- Policontusión -->
+<label class="relative flex flex-col items-center text-center p-3 rounded-xl border border-surface-container bg-surface-container-low hover:border-secondary cursor-pointer transition-all has-[:checked]:border-secondary has-[:checked]:bg-primary has-[:checked]:text-on-primary group">
+<input class="sr-only" name="hero_zone" type="radio" value="policontusion"/>
+<span class="material-symbols-outlined text-[24px] text-secondary group-has-[:checked]:text-tertiary-fixed mb-1">healing</span>
+<span class="font-label-sm text-[12px] font-bold block">Policontusión</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant group-has-[:checked]:text-on-primary/80">Golpe múltiple</span>
+</label>
+</div>
+</div>
+<!-- Fecha y Provincia -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-sm">
+<div>
+<label class="font-label-sm text-primary font-semibold block mb-1.5 flex items-center justify-between" for="accident-hero-date">
+<span>Fecha del Accidente</span>
+<span class="text-[10px] text-secondary font-bold">Ventana 72h</span>
+</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-low border border-surface-container text-on-surface font-body-sm focus:border-secondary focus:bg-surface-container-lowest focus:outline-none transition-all" id="accident-hero-date" required="" type="date"/>
+</div>
+<div>
+<label class="font-label-sm text-primary font-semibold block mb-1.5" for="province-hero-select">
+                    Provincia para la Asistencia
+                  </label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container-low border border-surface-container text-on-surface font-body-sm focus:border-secondary focus:bg-surface-container-lowest focus:outline-none transition-all" id="province-hero-select" required="">
+<option disabled="" selected="" value="">Seleccione provincia (52 prov.)</option>
+<optgroup label="Andalucía (Red Preferente)">
+<option value="sevilla">Sevilla</option>
+<option value="malaga">Málaga</option>
+<option value="cadiz">Cádiz</option>
+<option value="cordoba">Córdoba</option>
+<option value="granada">Granada</option>
+<option value="almeria">Almería</option>
+<option value="jaen">Jaén</option>
+<option value="huelva">Huelva</option>
+</optgroup>
+<optgroup label="Otras Comunidades">
+<option value="madrid">Madrid</option>
+<option value="barcelona">Barcelona</option>
+<option value="valencia">Valencia</option>
+<option value="alicante">Alicante</option>
+<option value="zaragoza">Zaragoza</option>
+<option value="vizcaya">Bizkaia</option>
+<option value="resto">Cualquier otra provincia de España</option>
+</optgroup>
+</select>
+</div>
+</div>
+<!-- Teléfono de contacto clínico -->
+<div>
+<label class="font-label-sm text-primary font-semibold block mb-1.5 flex items-center justify-between" for="patient-hero-phone">
+<span>Teléfono Móvil del Paciente</span>
+<span class="text-[11px] text-on-surface-variant font-normal">Para coordinar cita hospitalaria</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-secondary text-[20px]">phone_iphone</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low border border-surface-container text-on-surface font-body-md focus:border-secondary focus:bg-surface-container-lowest focus:outline-none transition-all" id="patient-hero-phone" placeholder="Ej. 612 345 678" required="" type="tel"/>
+</div>
+</div>
+<!-- Botón de Derivación Inmediata -->
+<div class="pt-1">
+<button class="w-full h-12 rounded-xl bg-secondary text-on-secondary font-headline-sm font-bold flex items-center justify-center gap-2 hover:bg-on-secondary-fixed-variant transition-all shadow-md hover:shadow-lg" type="submit">
+<span class="material-symbols-outlined text-[20px]">send_time_extension</span>
+<span>Solicitar Derivación &amp; Asignación Traumatológica</span>
+</button>
+<p class="font-label-sm text-[11px] text-center text-on-surface-variant mt-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">lock</span>
+                  Confidencialidad médica regulada RGPD · Tramitación 100% gratuita por convenio
+                </p>
+</div>
+<!-- Feedback Dinámico de Asignación -->
+<div class="hidden p-unit-sm rounded-xl bg-surface-container border border-secondary/30 flex items-start gap-3" id="hero-feedback">
+<span class="material-symbols-outlined text-secondary text-[24px]">task_alt</span>
+<div>
+<p class="font-headline-sm text-label-md font-bold text-primary">Triaje Procesado Exitosamente</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">
+                    Un coordinador facultativo de Clínicas Vita le contactará en menos de 20 minutos para asignarle centro y tramitar la autorización con la aseguradora sin coste.
+                  </p>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: BENTO GRID DE ALTA TECNOLOGÍA MÉDICA -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop py-unit-3xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-unit-md mb-unit-xl">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold block mb-2">Ecosistema Clínico HealthTech</span>
+<h2 class="font-display-md text-display-md text-primary font-bold tracking-tight">Precisión Diagnóstica &amp; Tratamiento Biomecánico</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+          Sin listas de espera hospitalarias. Equipamiento de resonancia de alto campo y unidades de rehabilitación que multiplican el tiempo efectivo de consulta frente a mutuas tradicionales.
+        </p>
+</div>
+<!-- Grid Bento -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-unit-lg">
+<!-- Bento Card 1: Diagnóstico por Imagen RMN con IMAGE_8 (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-2xl overflow-hidden border border-surface-container shadow-md flex flex-col justify-between group">
+<div class="relative h-80 w-full overflow-hidden bg-surface-container-low">
+<img alt="Resonador magnético RMN de alta resolución en entorno clínico sereno y limpio" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1X4JxTU8Hyp5iaQ193mzUcsmKVxdvvCh0rI5_rGJGB3hjiaDoMKNRIT92g_tyhjYtL7apyMeOHNcEie794KeM-lKTNNlJBlZ0d1OlEZGWe5dEBjAobAAUP70_UAuza79_61Nx9KjHBq3Mrm1WUBmK6Bd6GWpg3tqS-eVJWF1q-Z8DMAbZZkzrl1ckOhHi97lneNYP7-NR8qcvNVtiXwUQKuZIQ0IjNsR-BJXJClbbY7SCagyB2ulVQhxzo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent"></div>
+<div class="absolute top-4 left-4">
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-primary/85 backdrop-blur-md text-tertiary-fixed font-label-sm text-[12px] font-bold border border-tertiary-fixed/30">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+                Citación Prioritaria &lt; 48 Horas
+              </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 text-on-primary">
+<span class="font-data-mono text-[11px] text-tertiary-fixed font-semibold tracking-wider">TECNOLOGÍA 1.5T Y 3T DE ALTO CAMPO</span>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-primary">Diagnóstico por Imagen RMN de Alta Resolución</h3>
+</div>
+</div>
+<div class="p-unit-lg flex flex-col justify-between flex-1">
+<div class="space-y-unit-sm">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Objetivación precisa e indiscutible de patologías discales (hernias o protrusiones postraumáticas), desgarros de ligamentos y edema óseo ocasionados por desaceleración violenta.
+              </p>
+<!-- Especificaciones técnicas del informe -->
+<div class="grid grid-cols-3 gap-unit-xs pt-1">
+<div class="p-2.5 rounded-lg bg-surface-container border border-surface-container-high">
+<span class="font-headline-sm text-label-md font-bold text-primary block">&lt; 48 Horas</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Entrega de informe facultativo</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container border border-surface-container-high">
+<span class="font-headline-sm text-label-md font-bold text-primary block">100% Válido</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Admisible en sede pericial</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container border border-surface-container-high">
+<span class="font-headline-sm text-label-md font-bold text-primary block">Sin Coste</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Cargo directo a la póliza</span>
+</div>
+</div>
+</div>
+<div class="pt-unit-md mt-unit-sm flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                Red nacional de centros radiológicos homologados
+              </span>
+<a class="font-label-sm text-primary hover:text-secondary font-semibold flex items-center gap-1" href="#triaje-directo">
+                Pedir RMN urgente
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Bento Card 2: Fisioterapia Manual Avanzada con IMAGE_7 & Comparativa de Tiempo (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-2xl overflow-hidden border border-surface-container shadow-md flex flex-col justify-between group">
+<div class="relative h-80 w-full overflow-hidden bg-surface-container-low">
+<img alt="Estudio de fisioterapia avanzada con camilla ergonómica y maquinaria biomecánica moderna" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XvI1Jr6M82B_JdP3lEXacYJXwr67lr-1pJ_TYM21oRrwHub37ioudzHsd2g06delFYbcJSNQ55lelaVcDqlWa22d8rtYaJTJ9BbBXR6Nwi9zyXnVhrCH8PMICos0UxYFlruYl_Lf9PRfKqqxx7vYPsRXKzRJMOY_kF0b-jgpLMlzH6b7kOkNprRmbX25bzEu2qLRVyl1GTxuXkEftKwgKG2trDfcdUG3kjkXDT5HI16Am6AbMRR7R7GQo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent"></div>
+<div class="absolute top-4 left-4">
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-[12px] font-bold">
+                Atención 1 a 1 Exclusiva
+              </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 text-on-primary">
+<span class="font-data-mono text-[11px] text-tertiary-fixed font-semibold tracking-wider">MÁXIMA EFICACIA RECUPERADORA</span>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-primary">Fisioterapia Manual Avanzada</h3>
+</div>
+</div>
+<div class="p-unit-lg flex flex-col justify-between flex-1">
+<div class="space-y-unit-sm">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Tratamientos individualizados enfocados en el alivio biomecánico y la reeducación neuromuscular. Cero terapias masificadas o máquinas compartidas.
+              </p>
+<!-- Comparativa de Tiempo: Clínicas Vita vs Mutua de Seguro -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-surface-container">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-primary font-bold block mb-2">Comparativa de Calidad Asistencial</span>
+<div class="flex items-center justify-between gap-2 mb-2">
+<span class="font-label-sm text-[12px] font-semibold text-primary">Clínicas Vita (Red Propia)</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">45 - 60 min</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden mb-3">
+<div class="bg-secondary h-full rounded-full w-full"></div>
+</div>
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-sm text-[12px] text-on-surface-variant">Mutuas de aseguradora convencionales</span>
+<span class="font-headline-sm text-label-md font-semibold text-on-surface-variant line-through">12 - 15 min</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden mt-1">
+<div class="bg-outline-variant h-full rounded-full w-[25%]"></div>
+</div>
+</div>
+</div>
+<div class="pt-unit-md mt-unit-sm flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-on-surface-variant">Terapia manual + punción seca + diatermia</span>
+<a class="font-label-sm text-secondary font-bold hover:underline flex items-center gap-1" href="#triaje-directo">
+                Iniciar pauta
+                <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Bento Card 3: Calculadora / Asesor Interactivo de la Ventana de 72 Horas (12 Cols) -->
+<div class="lg:col-span-12 bg-primary text-on-primary rounded-2xl p-unit-lg md:p-unit-xl shadow-lg relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-80 h-80 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-unit-xl items-center">
+<div class="lg:col-span-5 space-y-unit-xs">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest/20 text-tertiary-fixed font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+<span>Asesor Clínico de Plazos Legales</span>
+</div>
+<h3 class="font-display-md text-headline-lg font-bold tracking-tight text-on-primary">
+                Calculadora de la Ventana Crítica de las 72h
+              </h3>
+<p class="font-body-md text-body-md text-on-primary/80">
+                La legislación española exige constancia de atención médica antes de que expiren 72 horas desde el choque para vincular legalmente sus secuelas. Evalúe su estado en tiempo real:
+              </p>
+</div>
+<!-- Calculadora interactiva -->
+<div class="lg:col-span-7 bg-surface-container-lowest text-primary rounded-xl p-unit-md md:p-unit-lg shadow-xl">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-md mb-unit-sm">
+<div>
+<label class="font-label-sm text-primary font-bold block mb-1" for="calc-accident-time">
+                    ¿Hace cuántas horas ocurrió el siniestro?
+                  </label>
+<div class="flex items-center gap-3">
+<input class="w-full accent-secondary" id="calc-hours-range" max="120" min="1" oninput="updateWindowCalculator(this.value)" type="range" value="24"/>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary shrink-0 w-16 text-right" id="calc-hours-display">24h</span>
+</div>
+</div>
+<!-- Indicador visual de urgencia clínica -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-secondary flex items-center gap-3" id="calc-status-box">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0" id="calc-icon">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div>
+<span class="font-headline-sm text-label-sm font-bold text-primary block" id="calc-status-title">Ventana Óptima Garantizada</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant block" id="calc-status-desc">Protección jurídica total y atención prioritaria inmediata.</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-unit-sm pt-2 border-t border-surface-container">
+<span class="font-label-sm text-[12px] text-on-surface-variant">
+                  Acreditación clínica inmediata para remitir a su compañía.
+                </span>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-secondary text-on-secondary font-label-md font-bold hover:bg-on-secondary-fixed-variant transition-colors shadow-sm" href="#triaje-directo">
+                  Activar Cobertura Inmediata
+                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: MAPEO DEL ITINERARIO DEL PACIENTE (Timeline 4 Pasos) -->
+<section class="w-full bg-surface-container-lowest py-unit-3xl border-y border-surface-container">
+<div class="max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop">
+<div class="max-w-3xl mb-unit-2xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold block mb-2">Trazabilidad Asistencial Integral</span>
+<h2 class="font-display-md text-display-md text-primary font-bold tracking-tight">El Itinerario Clínico del Lesionado</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+            De la primera consulta al alta médica con baremación pericial. Diseñado para garantizar su salud y defender sus derechos.
+          </p>
+</div>
+<!-- Línea de tiempo interactiva 4 pasos -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-unit-md relative">
+<!-- Step 1 -->
+<div class="p-unit-lg rounded-2xl bg-surface-container-low border border-surface-container relative hover:bg-surface-container transition-all group">
+<div class="flex items-center justify-between mb-unit-md">
+<span class="font-data-mono text-[12px] font-bold text-secondary bg-surface-container-lowest px-3 py-1 rounded-md shadow-sm">
+                01 · TRIAJE
+              </span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">vital_signs</span>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Triaje &amp; Apertura del Parte</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Recepción en menos de 30 minutos. Valoración inicial, fijación cronológica de la ventana de 72h y asignación de centro concertado en su código postal.
+            </p>
+<div class="mt-4 pt-3 border-t border-surface-container text-[11px] font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+              Trámite 100% digital o telefónico
+            </div>
+</div>
+<!-- Step 2 -->
+<div class="p-unit-lg rounded-2xl bg-surface-container-low border border-surface-container relative hover:bg-surface-container transition-all group">
+<div class="flex items-center justify-between mb-unit-md">
+<span class="font-data-mono text-[12px] font-bold text-secondary bg-surface-container-lowest px-3 py-1 rounded-md shadow-sm">
+                02 · DIAGNÓSTICO
+              </span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">radiology</span>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Traumatología &amp; RMN</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Examen por especialista traumatólogo y citación prioritaria para Resonancia Magnética de alto campo e informe radiológico en &lt;48 horas.
+            </p>
+<div class="mt-4 pt-3 border-t border-surface-container text-[11px] font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+              Sin demoras de listas de espera
+            </div>
+</div>
+<!-- Step 3 -->
+<div class="p-unit-lg rounded-2xl bg-surface-container-low border border-surface-container relative hover:bg-surface-container transition-all group">
+<div class="flex items-center justify-between mb-unit-md">
+<span class="font-data-mono text-[12px] font-bold text-secondary bg-surface-container-lowest px-3 py-1 rounded-md shadow-sm">
+                03 · RECUPERACIÓN
+              </span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">healing</span>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Rehabilitación Manual</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Sesiones completas de fisioterapia de 45 a 60 min. Terapia manual traumatológica, electroterapia de precisión y ejercicios guiados de readaptación funcional.
+            </p>
+<div class="mt-4 pt-3 border-t border-surface-container text-[11px] font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+              Fisioterapeuta exclusivo asignado
+            </div>
+</div>
+<!-- Step 4 -->
+<div class="p-unit-lg rounded-2xl bg-surface-container-low border border-surface-container relative hover:bg-surface-container transition-all group">
+<div class="flex items-center justify-between mb-unit-md">
+<span class="font-data-mono text-[12px] font-bold text-secondary bg-surface-container-lowest px-3 py-1 rounded-md shadow-sm">
+                04 · RESOLUCIÓN
+              </span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">assignment_turned_in</span>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Alta Médica &amp; Peritaje</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Emisión de informe de estabilización lesional detallado con baremo médico oficial del daño corporal para su defensa o indemnización.
+            </p>
+<div class="mt-4 pt-3 border-t border-surface-container text-[11px] font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+              Validez pericial plena
+            </div>
+</div>
+</div>
+<!-- Banner de Garantía Sanitaria -->
+<div class="mt-unit-xl p-unit-md rounded-xl bg-surface-container flex flex-col md:flex-row items-center justify-between gap-unit-md border border-surface-container-high">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div>
+<p class="font-headline-sm text-label-md font-bold text-primary">Conformidad Legal y Deontológica Estricta</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">
+                Todos los informes están visados por facultativos colegiados conforme al Real Decreto Legislativo 8/2004 y Ley 35/2015.
+              </p>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-on-primary font-label-md font-semibold hover:bg-secondary transition-colors shrink-0 shadow-sm" href="#triaje-directo">
+<span>Comenzar en el Paso 01</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION: PLAN EXPANSIÓN RED SUR (B2B Institucional Andalucía) -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop py-unit-3xl">
+<div class="rounded-3xl bg-primary text-on-primary p-unit-xl md:p-unit-3xl relative overflow-hidden shadow-2xl border border-secondary/20">
+<!-- Background Ambient Glow -->
+<div class="absolute right-0 top-0 w-96 h-96 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-tertiary-fixed/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-unit-2xl items-center">
+<!-- B2B Presentation -->
+<div class="lg:col-span-7 space-y-unit-md">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container-highest/20 text-tertiary-fixed font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[16px]">handshake</span>
+<span>Convocatoria Concertada 2025 · Andalucía</span>
+</div>
+<h2 class="font-display-md text-display-md font-bold tracking-tight text-on-primary">
+              Plan Expansión Red Sur: <br class="hidden sm:inline"/>
+<span class="text-tertiary-fixed">Adhesión de Centros Sanitarios</span> en Andalucía
+            </h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 leading-relaxed">
+              Clínicas Vita amplía su red asistencial preferente en las 8 provincias andaluzas (<strong class="text-on-primary">Sevilla, Málaga, Cádiz, Córdoba, Granada, Almería, Jaén y Huelva</strong>). Abrimos proceso de homologación concertada para clínicas de fisioterapia avanzada, centros médicos de traumatología y servicios de radiodiagnóstico RMN.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-md pt-unit-xs">
+<div class="p-3.5 rounded-xl bg-surface-container-highest/10 border border-surface-container-highest/20 flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-[22px] mt-0.5">group_add</span>
+<div>
+<p class="font-headline-sm text-label-md font-bold text-on-primary">Derivación Sanitaria Estable</p>
+<p class="font-body-sm text-[12px] text-on-primary/70">Flujo recurrente de pacientes con cobertura directa garantizada por póliza de siniestro.</p>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-highest/10 border border-surface-container-highest/20 flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-[22px] mt-0.5">account_balance_wallet</span>
+<div>
+<p class="font-headline-sm text-label-md font-bold text-on-primary">Liquidación Agilizada CAS</p>
+<p class="font-body-sm text-[12px] text-on-primary/70">Gestión de cobro y baremación centralizada a través del portal B2B de Clínicas Vita.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Formulario B2B para Centros Médicos -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-lowest text-primary rounded-2xl p-unit-lg shadow-2xl border border-surface-container">
+<h3 class="font-headline-lg text-headline-sm font-bold text-primary mb-1">Solicitar Homologación de Centro</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-unit-md">Canal exclusivo para directores médicos y titulares de clínica en Andalucía.</p>
+<form class="space-y-unit-sm" onsubmit="event.preventDefault(); alert('Candidatura recibida. La dirección de expansión de Clínicas Vita en Andalucía contactará con su centro en menos de 24 horas laborables.');">
+<div>
+<label class="font-label-sm text-primary font-bold block mb-1">Nombre del Centro Sanitario / Razón Social</label>
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low border border-surface-container text-on-surface font-body-sm focus:border-secondary focus:bg-surface-container-lowest focus:outline-none transition-all" placeholder="Ej. Policlínica Traumatológica del Sur" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-unit-sm">
+<div>
+<label class="font-label-sm text-primary font-bold block mb-1">Provincia</label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container-low border border-surface-container text-on-surface font-body-sm focus:border-secondary focus:bg-surface-container-lowest focus:outline-none transition-all" required="">
+<option value="sevilla">Sevilla</option>
+<option value="malaga">Málaga</option>
+<option value="cadiz">Cádiz</option>
+<option value="cordoba">Córdoba</option>
+<option value="granada">Granada</option>
+<option value="almeria">Almería</option>
+<option value="jaen">Jaén</option>
+<option value="huelva">Huelva</option>
+<option value="otra">Otra Provincia</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-primary font-bold block mb-1">Especialidad</label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container-low border border-surface-container text-on-surface font-body-sm focus:border-secondary focus:bg-surface-container-lowest focus:outline-none transition-all" required="">
+<option value="fisio">Fisioterapia</option>
+<option value="trauma">Traumatología</option>
+<option value="rmn">Radiodiagnóstico / RMN</option>
+<option value="integral">Centro Multidisciplinar</option>
+</select>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-primary font-bold block mb-1">Teléfono o Correo de Dirección Médica</label>
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low border border-surface-container text-on-surface font-body-sm focus:border-secondary focus:bg-surface-container-lowest focus:outline-none transition-all" placeholder="direccion@centromedico.es / 954..." required="" type="text"/>
+</div>
+<button class="w-full h-12 rounded-lg bg-secondary text-on-secondary font-headline-sm text-label-md font-bold hover:bg-on-secondary-fixed-variant transition-all shadow-md mt-unit-xs" type="submit">
+                  Presentar Candidatura de Homologación
+                </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BANNER DE ASISTENCIA TELEFÓNICA URGENTE 24/7 -->
+<section class="w-full bg-surface-container-low border-t border-surface-container py-unit-xl">
+<div class="max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-unit-lg">
+<div class="flex items-center gap-unit-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-secondary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">support_agent</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">¿Dudas con la cobertura o su aseguradora se demora?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nuestros facultativos y coordinadores de triaje atienden 24h los 365 días con neutralidad clínica.</p>
+</div>
+</div>
+<div class="flex items-center gap-unit-sm w-full md:w-auto">
+<a class="flex-1 md:flex-none inline-flex items-center justify-center h-11 px-6 rounded-lg bg-primary text-on-primary font-label-md font-bold hover:bg-secondary transition-all shadow-sm" href="tel:900800240">
+<span class="material-symbols-outlined mr-2 text-[18px]">call</span>
+            Llamada Gratuita 900 800 240
+          </a>
+<a class="inline-flex items-center justify-center h-11 px-4 rounded-lg bg-[#075E54] text-on-primary font-label-md hover:bg-[#064E46] transition-all shadow-sm" href="https://wa.me/34900800240" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER INSTITUCIONAL COMPLETO (4 COLUMNAS) -->
+<footer class="w-full bg-surface-container-lowest shadow-[0_-2px_10px_rgba(10,37,64,0.03)] border-t border-surface-container">
+<div class="max-w-[1440px] mx-auto px-gutter-mobile md:px-margin-desktop pt-unit-3xl pb-unit-2xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-unit-2xl mb-unit-2xl">
+<!-- Col 1: Corporativo & Cobertura -->
+<div>
+<div class="flex items-center gap-2.5 mb-unit-md">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">local_hospital</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Clínicas Vita</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-unit-md leading-relaxed">
+            Plataforma HealthTech y red asistencial médica concertada para la atención integral de lesionados de tráfico, accidentes laborales y traumatología avanzada en toda España.
+          </p>
+<div class="flex flex-col gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<span>Adscrito al Convenio UNESPA / CAS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">location_on</span>
+<span>Cobertura Homologada en 52 Provincias</span>
+</div>
+</div>
+</div>
+<!-- Col 2: Especialidades Clínicas -->
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-unit-md font-bold">Especialidades Clínicas</h4>
+<ul class="flex flex-col gap-unit-xs font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Triaje Digital Inmediato</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Fisioterapia Manual Avanzada (45-60 min)</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Traumatología Especializada de Tráfico</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Resonancia Magnética RMN de Alto Campo</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Peritaje y Valoración del Daño Corporal</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Unidad del Latigazo Cervical</a></li>
+</ul>
+</div>
+<!-- Col 3: Garantías Legales & Red B2B -->
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-unit-md font-bold">Garantías &amp; Profesionales</h4>
+<ul class="flex flex-col gap-unit-xs font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Libre Elección de Centro Asistencial</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Protocolo Legal de las 72 Horas</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Plan Expansión Red Sur (Andalucía B2B)</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Homologación de Centros y Clínicas</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Portal de Gestión de Informes Médicos</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Atención 100% Gratuita sin Copagos</a></li>
+</ul>
+</div>
+<!-- Col 4: Contacto & Urgencias -->
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-unit-md font-bold">Central de Triaje 24/7</h4>
+<div class="flex flex-col gap-unit-sm font-body-sm text-body-sm text-on-surface-variant">
+<p class="text-primary font-semibold">Atención telefónica gratuita a nivel nacional:</p>
+<a class="flex items-center gap-2 text-secondary font-headline-sm text-headline-sm font-bold" href="tel:900800240">
+<span class="material-symbols-outlined text-[22px]">call</span>
+              900 800 240
+            </a>
+<p class="text-[13px]">Coordinación médica urgente y emisión de volantes para pruebas diagnósticas sin demora.</p>
+<div class="pt-unit-xs">
+<a class="inline-flex items-center gap-2 text-label-md font-label-md text-[#075E54] hover:underline font-semibold" href="https://wa.me/34900800240" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                Atención por WhatsApp Asistencial
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Legal Bottom Strip -->
+<div class="pt-unit-lg mt-unit-lg flex flex-col md:flex-row items-center justify-between gap-unit-md font-label-sm text-[12px] text-on-surface-variant bg-surface-container-low/60 px-unit-lg py-unit-md rounded-xl border border-surface-container">
+<div>
+          © 2025 Clínicas Vita S.L. · Red Asistencial Sanitaria y Pericial Homologada. Todos los derechos reservados.
+        </div>
+<div class="flex flex-wrap items-center gap-unit-lg">
+<a class="hover:text-on-surface transition-colors" href="#">Aviso Legal Sanitario</a>
+<a class="hover:text-on-surface transition-colors" href="#">Política de Privacidad RGPD</a>
+<a class="hover:text-on-surface transition-colors" href="#">Protección de Datos Médicos</a>
+<a class="hover:text-on-surface transition-colors" href="#">Código Deontológico</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- SCRIPTS CLIENT-SIDE: ESTADO DINÁMICO, CALCULADORA 72H Y FORMULARIO TRIAJE -->
+<script>
+    // Selector dinámico de estado asistencial
+    function switchUserState(state) {
+      const tabNew = document.getElementById('tab-new');
+      const tabSwitch = document.getElementById('tab-switch');
+      const stateTitle = document.getElementById('state-title');
+      const stateDesc = document.getElementById('state-desc');
+
+      if (state === 'new') {
+        tabNew.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg text-label-md font-semibold bg-surface-container-lowest text-primary shadow-sm transition-all';
+        tabSwitch.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all';
+        stateTitle.textContent = 'Protocolo Activo: Nuevo Accidente (< 72h)';
+        stateDesc.textContent = 'Si su siniestro ocurrió en las últimas 72 horas, tiene derecho a consulta traumatológica y pruebas diagnósticas urgentes sin autorización previa de su compañía aseguradora.';
+      } else {
+        tabSwitch.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg text-label-md font-semibold bg-surface-container-lowest text-primary shadow-sm transition-all';
+        tabNew.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg text-label-md font-semibold text-on-surface-variant hover:text-on-surface transition-all';
+        stateTitle.textContent = 'Protocolo Activo: Cambio de Centro de Rehabilitación';
+        stateDesc.textContent = 'Tiene derecho por ley a trasladar su tratamiento a centros Clínicas Vita si las sesiones en su mutua actual son insuficientes (10-15 min) o si las citas se demoran. Tramitamos el cambio sin coste.';
+      }
+    }
+
+    // Calculadora interactiva de las 72 horas
+    function updateWindowCalculator(hours) {
+      const display = document.getElementById('calc-hours-display');
+      const title = document.getElementById('calc-status-title');
+      const desc = document.getElementById('calc-status-desc');
+      const box = document.getElementById('calc-status-box');
+      const icon = document.getElementById('calc-icon');
+
+      display.textContent = hours + 'h';
+
+      if (hours <= 48) {
+        title.textContent = 'Ventana Óptima de Máxima Prioridad';
+        desc.textContent = 'Protección jurídica total y asignación inmediata de resonancia y traumatólogo.';
+        box.className = 'p-3 rounded-lg bg-surface-container-low border border-secondary flex items-center gap-3';
+        icon.className = 'w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0';
+        icon.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span>';
+      } else if (hours <= 72) {
+        title.textContent = 'Atención Urgente Requerida';
+        desc.textContent = 'Restan pocas horas para agotar el límite formal de 72h. Solicite su triaje ahora mismo.';
+        box.className = 'p-3 rounded-lg bg-error-container/30 border border-error flex items-center gap-3';
+        icon.className = 'w-9 h-9 rounded-full bg-error text-on-error flex items-center justify-center shrink-0';
+        icon.innerHTML = '<span class="material-symbols-outlined text-[20px]">warning</span>';
+      } else {
+        title.textContent = 'Plazo de 72h Superado (Requiere Justificación)';
+        desc.textContent = 'Aún es posible tramitar cobertura si acudió a urgencias o mediante informe evolutivo.';
+        box.className = 'p-3 rounded-lg bg-surface-container border border-outline flex items-center gap-3';
+        icon.className = 'w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0';
+        icon.innerHTML = '<span class="material-symbols-outlined text-[20px]">info</span>';
+      }
+    }
+
+    // Feedback del triaje instantáneo en el Hero
+    function processInstantTriage() {
+      const feedback = document.getElementById('hero-feedback');
+      if (feedback) {
+        feedback.classList.remove('hidden');
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
+
+  <!-- Scripts Globales Clínicas Vita (Configuración, WhatsApp Modal y Leads) -->
+  <script src="../../js/config.js" defer></script>
+  <script src="../../js/main.js" defer></script>
+
+</body></html>
+
